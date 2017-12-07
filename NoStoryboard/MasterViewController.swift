@@ -7,45 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 class MasterViewController: UIViewController {
     var drawer = UIView()
     var drawerIsOpen = false
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var people: [NSManagedObject] = []
+    var increment = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let navBar = UIView()
-        view.addSubview(navBar)
-        navBar.backgroundColor = UIColor.darkGray
-        navBar.translatesAutoresizingMaskIntoConstraints = false
-        navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        navBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        navBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.20).isActive = true
-
-        let buttonOpenMenu = UIButton(frame: CGRect(x: 10, y: 30, width: 50, height: 50))
-        navBar.addSubview(buttonOpenMenu)
-        buttonOpenMenu.titleLabel?.font = UIFont(name: "FontAwesome", size: 24.0)
-        buttonOpenMenu.setTitle("\u{f0c9}", for: .normal)
-        buttonOpenMenu.backgroundColor = UIColor.gray
-        buttonOpenMenu.setTitleColor(UIColor.cyan, for: .normal)
-        buttonOpenMenu.addTarget(self, action: #selector(self.openDrawer), for: .touchUpInside)
-        buttonOpenMenu.translatesAutoresizingMaskIntoConstraints = false
-        buttonOpenMenu.leadingAnchor.constraint(equalTo: navBar.leadingAnchor, constant: 10.0).isActive = true
-        buttonOpenMenu.topAnchor.constraint(equalTo: navBar.topAnchor, constant: 10.0).isActive = true
         
-        //let drawerView = DrawerViewController().view
+        // see self's extensions
+        setupLayout()
+        setupAppData()
         
-        let drawerVC = DrawerViewController()
-        view.addSubview(drawerVC.view)
-        drawerVC.view.translatesAutoresizingMaskIntoConstraints = false
-        drawerVC.view.trailingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        drawerVC.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75).isActive = true
-        drawerVC.view.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        drawerVC.view.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
-        
-        self.drawer = drawerVC.view
+        print(people.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +40,30 @@ class MasterViewController: UIViewController {
             
         })
         self.drawerIsOpen = !self.drawerIsOpen
+    }
+    
+    func save() {
+        print("gonna save a thing")
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Person", in: managedContext)
+        
+        let person = NSManagedObject(entity: entity!, insertInto: managedContext)
+        
+        let theName = "Splat Gore Bob \(increment)"
+        person.setValue(theName, forKey: "name")
+        
+        do {
+            try managedContext.save()
+            people.append(person)
+            increment = increment + 1
+            print("saved things?")
+            print("count: \(people.count)")
+            print("inc: \(increment)")
+        } catch let error as NSError {
+            print("Could not save. \(error).  \(error.userInfo)")
+        }
+        // appDelegate.persistentContainer.setValue("myvalue", forKey: "mykey")
     }
     
     /*
