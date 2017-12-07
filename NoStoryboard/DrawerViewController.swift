@@ -12,7 +12,8 @@ class DrawerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.frame = CGRect(x: -200, y: 100, width: 200, height: 200)
+        // self.view.frame = CGRect(x: -200, y: 100, width: 200, height: 200)
+        // self.view.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         self.view.backgroundColor = UIColor.brown
 
         // Do any additional setup after loading the view.

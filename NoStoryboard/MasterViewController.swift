@@ -14,29 +14,38 @@ class MasterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // let navBar = CGRect(x: 0, y:0, width: UIScreen.main.bounds.width, height: 100)
-        let navBar = UIView(frame: CGRect(x: 0, y:0, width: UIScreen.main.bounds.width, height: 100))
+
+        let navBar = UIView()
+        view.addSubview(navBar)
         navBar.backgroundColor = UIColor.darkGray
+        navBar.translatesAutoresizingMaskIntoConstraints = false
+        navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        navBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        navBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.20).isActive = true
+
+        let buttonOpenMenu = UIButton(frame: CGRect(x: 10, y: 30, width: 50, height: 50))
+        navBar.addSubview(buttonOpenMenu)
+        buttonOpenMenu.titleLabel?.font = UIFont(name: "FontAwesome", size: 24.0)
+        buttonOpenMenu.setTitle("\u{f0c9}", for: .normal)
+        buttonOpenMenu.backgroundColor = UIColor.gray
+        buttonOpenMenu.setTitleColor(UIColor.cyan, for: .normal)
+        buttonOpenMenu.addTarget(self, action: #selector(self.openDrawer), for: .touchUpInside)
+        buttonOpenMenu.translatesAutoresizingMaskIntoConstraints = false
+        buttonOpenMenu.leadingAnchor.constraint(equalTo: navBar.leadingAnchor, constant: 10.0).isActive = true
+        buttonOpenMenu.topAnchor.constraint(equalTo: navBar.topAnchor, constant: 10.0).isActive = true
         
-        let button = UIButton(frame: CGRect(x: 10, y: 30, width: 50, height: 50))
-        button.titleLabel?.font = UIFont(name: "FontAwesome", size: 24.0)
-        button.setTitle("\u{f0c9}", for: .normal)
-        button.backgroundColor = UIColor.gray
-        button.setTitleColor(UIColor.cyan, for: .normal)
-        button.addTarget(self, action: #selector(self.openDrawer), for: .touchUpInside)
-        
-        
-        navBar.addSubview(button)
-        
-        self.view.addSubview(navBar)
-        
+        //let drawerView = DrawerViewController().view
         
         let drawerVC = DrawerViewController()
-        self.view.addSubview(drawerVC.view)
+        view.addSubview(drawerVC.view)
+        drawerVC.view.translatesAutoresizingMaskIntoConstraints = false
+        drawerVC.view.trailingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        drawerVC.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75).isActive = true
+        drawerVC.view.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        drawerVC.view.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
         
         self.drawer = drawerVC.view
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +56,10 @@ class MasterViewController: UIViewController {
     func openDrawer() {
         print("going to deal with drawer")
         UIView.animate(withDuration: 0.5, animations: {
-            self.drawer.center.x = self.drawerIsOpen ? -200 : 200
+            // divide adaptive width by 2 because drawer.CENTER.x
+            let drawerWidth = self.drawer.frame.size.width / 2
+            self.drawer.center.x = self.drawerIsOpen ? -drawerWidth : drawerWidth
+            
         })
         self.drawerIsOpen = !self.drawerIsOpen
     }
