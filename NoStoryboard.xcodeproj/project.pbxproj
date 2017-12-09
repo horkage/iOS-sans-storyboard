@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */; };
 		C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A11FD20F21008C04BC /* AppDelegate.swift */; };
 		C1F594A41FD20F21008C04BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A31FD20F21008C04BC /* ViewController.swift */; };
 		C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A81FD20F21008C04BC /* NoStoryboard.xcdatamodeld */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
 		C1F5949E1FD20F21008C04BC /* NoStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F594A11FD20F21008C04BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1F594A31FD20F21008C04BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				C1F594A31FD20F21008C04BC /* ViewController.swift */,
 				C1F594B61FD21826008C04BC /* CustomViewController.swift */,
 				C1F594BE1FD71D3C008C04BC /* MasterViewController.swift */,
+				C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */,
 				C1F595681FD9FD3C008C04BC /* MasterViewController+AppData.swift */,
 				C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */,
 				C1F595641FD73ADB008C04BC /* DrawerViewController.swift */,
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1F595671FD9FAC6008C04BC /* MasterViewController+Layout.swift in Sources */,
+				C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */,
 				C1F594BF1FD71D3C008C04BC /* MasterViewController.swift in Sources */,
 				C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */,
 				C1F594A41FD20F21008C04BC /* ViewController.swift in Sources */,
@@ -516,6 +520,7 @@
 				C1F594B51FD20F21008C04BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
