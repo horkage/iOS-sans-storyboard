@@ -18,62 +18,35 @@ class MasterViewController: UIViewController {
     var increment = 1
     let navBar = UIView()
     var lastButton = UIButton()
-    var dataController: DataTableViewController?  // this gives us a "strong" reference
+    
+    // By declaring dataController here gives us a "strong" reference to DataTableViewController
+    // If this declaration were not here (but inside the methods below, for example) then whenever
+    // the user scrolls the datatable view, the data is lost
+    //
+    // for contrast, Interface Builder deals with this by defining outlets and actions as weak/strong
+    var dataController: DataTableViewController?  // the "strong" reference
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataController = DataTableViewController()
-        // dataController.receiveData(data: people)
+        
         let dataView = dataController?.tableView
-        // dataView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        // dataView?.dataSource
         dataView?.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dataView!)
-        
-        //dataView?.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        //dataView?.topAnchor.constraint(equalTo: navBar.bottomAnchor)
         dataView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        
-        
-        
-        // see self's extensions
         setupLayout()
+        
+        // auto layout needed all 4 constraints to work - just providing top wasn't enough
+        // now the very first top cell isn't buried behind the navbar
+        dataView?.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
+        dataView?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        dataView?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        dataView?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+                
         // setupAppData()
- 
-        // tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
-        
-
-        
-        /*
-        var previousButton = UIButton()
-        for i in 0...people.count-1 {
-            let button = UIButton()
-            button.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(button)
-            let person = people[i]
-            let name = person.value(forKey: "name") as! String
-            button.setTitle(name, for: .normal)
-            button.setTitleColor(UIColor.cyan, for: .normal)
-            
-            button.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20.0)
-            button.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 20.0)
-            
-            button.addTarget(self, action: #selector(self.clicky(sender:)), for: .touchUpInside)
-            
-            if i == 0 {
-                button.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
-            } else {
-                button.topAnchor.constraint(equalTo: previousButton.bottomAnchor).isActive = true
-            }
-            
-            previousButton = button
-            lastButton = previousButton
-        }
-        */
     }
 
     
