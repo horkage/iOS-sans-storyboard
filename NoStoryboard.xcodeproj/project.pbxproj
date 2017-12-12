@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */; };
+		C12DCF101FE0645A006E6EB9 /* socket.io.js in Resources */ = {isa = PBXBuildFile; fileRef = C12DCF0F1FE0645A006E6EB9 /* socket.io.js */; };
 		C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A11FD20F21008C04BC /* AppDelegate.swift */; };
 		C1F594A41FD20F21008C04BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A31FD20F21008C04BC /* ViewController.swift */; };
 		C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A81FD20F21008C04BC /* NoStoryboard.xcdatamodeld */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
+		C12DCF0F1FE0645A006E6EB9 /* socket.io.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = socket.io.js; sourceTree = "<group>"; };
 		C1F5949E1FD20F21008C04BC /* NoStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F594A11FD20F21008C04BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1F594A31FD20F21008C04BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				C1F594AD1FD20F21008C04BC /* LaunchScreen.storyboard */,
 				C1F594B01FD20F21008C04BC /* Info.plist */,
 				C1F594A81FD20F21008C04BC /* NoStoryboard.xcdatamodeld */,
+				C12DCF0F1FE0645A006E6EB9 /* socket.io.js */,
 			);
 			path = NoStoryboard;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				C1F5954B1FD735F3008C04BC /* fixed-width.less in Resources */,
 				C1F5955A1FD735F3008C04BC /* _icons.scss in Resources */,
 				C1F595481FD735F3008C04BC /* animated.less in Resources */,
+				C12DCF101FE0645A006E6EB9 /* socket.io.js in Resources */,
 				C1F595591FD735F3008C04BC /* _fixed-width.scss in Resources */,
 				C1F595611FD735F3008C04BC /* _stacked.scss in Resources */,
 				C1F5954F1FD735F3008C04BC /* list.less in Resources */,
