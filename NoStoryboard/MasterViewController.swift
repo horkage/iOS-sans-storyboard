@@ -30,6 +30,8 @@ class MasterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
         dataController = DataTableViewController()
         
         let dataView = dataController?.tableView
@@ -70,7 +72,16 @@ class MasterViewController: UIViewController {
         print(sender.titleLabel?.text)
     }
     
+    func doTheThing() {
+        print("the thing was did")
+    }
+    
     func save() {
+        // notificiations?
+        print("notificaiton?")
+        var timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.doTheThing), userInfo: nil, repeats: false)
+        
+        /*
         print("gonna save a thing")
         let managedContext = appDelegate.persistentContainer.viewContext
         
@@ -109,6 +120,7 @@ class MasterViewController: UIViewController {
         button.topAnchor.constraint(equalTo: lastButton.bottomAnchor).isActive = true
         
         lastButton = button
+        */
     }
     
     /*
@@ -157,3 +169,4 @@ extension MasterViewController: UITableViewDataSource {
     }
 }
 */
+
