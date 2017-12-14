@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */; };
 		C12DCF101FE0645A006E6EB9 /* socket.io.js in Resources */ = {isa = PBXBuildFile; fileRef = C12DCF0F1FE0645A006E6EB9 /* socket.io.js */; };
+		C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF131FE20BF0006E6EB9 /* Guy.swift */; };
 		C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A11FD20F21008C04BC /* AppDelegate.swift */; };
 		C1F594A41FD20F21008C04BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A31FD20F21008C04BC /* ViewController.swift */; };
 		C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A81FD20F21008C04BC /* NoStoryboard.xcdatamodeld */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
 		C12DCF0F1FE0645A006E6EB9 /* socket.io.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = socket.io.js; sourceTree = "<group>"; };
+		C12DCF131FE20BF0006E6EB9 /* Guy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Guy.swift; path = ../Guy.swift; sourceTree = "<group>"; };
 		C1F5949E1FD20F21008C04BC /* NoStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F594A11FD20F21008C04BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1F594A31FD20F21008C04BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				C1F595641FD73ADB008C04BC /* DrawerViewController.swift */,
 				C1F594BA1FD5D49C008C04BC /* Page2ViewController.swift */,
 				C1F594BC1FD5E146008C04BC /* State.swift */,
+				C12DCF131FE20BF0006E6EB9 /* Guy.swift */,
 				C1F594AB1FD20F21008C04BC /* Assets.xcassets */,
 				C1F594AD1FD20F21008C04BC /* LaunchScreen.storyboard */,
 				C1F594B01FD20F21008C04BC /* Info.plist */,
@@ -357,6 +360,7 @@
 			files = (
 				C1F595671FD9FAC6008C04BC /* MasterViewController+Layout.swift in Sources */,
 				C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */,
+				C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */,
 				C1F594BF1FD71D3C008C04BC /* MasterViewController.swift in Sources */,
 				C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */,
 				C1F594A41FD20F21008C04BC /* ViewController.swift in Sources */,

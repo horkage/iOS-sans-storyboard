@@ -11,6 +11,9 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var guyObjects = [Guy]()
+
 
     var window: UIWindow?
 
@@ -75,10 +78,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         return
                     }
                     
-                    // Yay! Goodies!
+                    // Yay! Goodies!  (deliberately block main thread here. no point in async'ing this for an app w/o data..)
                     let name = thisGuy["name"] as? String
-                    print("Guy is: \(name!)")
+                    
+                    let imageUrlString = thisGuy["imageUrl"] as! String
+                    let imageUrl = URL(string: imageUrlString)
+                    let imageData = try? Data(contentsOf: imageUrl!)
+                    let image = UIImage(data: imageData!)
+                    var guy = Guy()
+                    guy.name = name!
+                    guy.image = image!
+                    self.guyObjects.append(guy)
+                    
+                    // async this at some point:
+                    /*
+                    let url = URL(string: image.url)
+                    
+                    DispatchQueue.global().async {
+                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        DispatchQueue.main.async {
+                            imageView.image = UIImage(data: data!)
+                        }
+                    }
+                    */
                 }
+                let dataController = DataTableViewController()
+                DispatchQueue.main.async {
+                    dataController.tableView.reloadData()
+                }
+                
+                
             } catch {
                 print("error converting requestData to JSON (2)")
                 return

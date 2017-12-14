@@ -10,15 +10,20 @@ import UIKit
 import CoreData
 
 class DataTableViewController: UITableViewController {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var people: [NSManagedObject] = []
-
+    var guys = [Guy]()
+    var tableArray = [Any]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        parseJSON()
+        
+        guys = appDelegate.guyObjects
+        
         
         // tableView.estimatedRowHeight = 200
         // tableView.dataSource = people as! UITableViewDataSource
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
@@ -41,6 +46,34 @@ class DataTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    func parseJSON() {
+        let endPoint = URL(string: "http://10.1.20.130:9000/getGuys")
+        let task = URLSession.shared.dataTask(with: endPoint!) {(data, response, error) in
+            guard error == nil else {
+                print("couldn't hit url")
+                return
+            }
+            
+            guard let content = data else {
+                print("No data")
+                return
+            }
+            
+            guard let json = (try? JSONSerialization.jsonObject(with: content, options: .mutableContainers)) as? [Any] else {
+                print("couldn't parse JSON")
+                return
+            }
+            self.tableArray = json
+            print("TABLE ARRAY")
+            print(self.tableArray)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        task.resume()
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select")
         let cell = tableView.cellForRow(at: indexPath)
@@ -54,23 +87,28 @@ class DataTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         // return people.count
-        
-        return 2
+        print("numberOfSections")
+        return 1
     }
+    */
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return people.count
+        // return people.count
+        return self.tableArray.count
         //return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let person = people[indexPath.row]
-        let name = person.value(forKey: "name") as! String
+        let guy = self.tableArray[indexPath.row] as? [String: Any]
+        
+        // let name = person.value(forKey: "name") as! String
+        let name = guy?["name"] as! String
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         
         // var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell

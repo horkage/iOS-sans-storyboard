@@ -14,6 +14,8 @@ class MasterViewController: UIViewController {
     var drawer = UIView()
     var drawerIsOpen = false
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let guys = [Guy]()
+    
     var people: [NSManagedObject] = [] // UITableViewDataSource
     var increment = 1
     let navBar = UIView()
@@ -30,7 +32,8 @@ class MasterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        let guys = appDelegate.guyObjects
+        print(guys.count)
         
         dataController = DataTableViewController()
         
