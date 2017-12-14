@@ -10,6 +10,7 @@
 		C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */; };
 		C12DCF101FE0645A006E6EB9 /* socket.io.js in Resources */ = {isa = PBXBuildFile; fileRef = C12DCF0F1FE0645A006E6EB9 /* socket.io.js */; };
 		C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF131FE20BF0006E6EB9 /* Guy.swift */; };
+		C12DCF161FE31094006E6EB9 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF151FE31094006E6EB9 /* CustomCell.swift */; };
 		C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A11FD20F21008C04BC /* AppDelegate.swift */; };
 		C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A81FD20F21008C04BC /* NoStoryboard.xcdatamodeld */; };
 		C1F594AC1FD20F21008C04BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F594AB1FD20F21008C04BC /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
 		C12DCF0F1FE0645A006E6EB9 /* socket.io.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = socket.io.js; sourceTree = "<group>"; };
 		C12DCF131FE20BF0006E6EB9 /* Guy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Guy.swift; path = ../Guy.swift; sourceTree = "<group>"; };
+		C12DCF151FE31094006E6EB9 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C1F5949E1FD20F21008C04BC /* NoStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F594A11FD20F21008C04BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1F594A91FD20F21008C04BC /* NoStoryboard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoStoryboard.xcdatamodel; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				C1F594A11FD20F21008C04BC /* AppDelegate.swift */,
 				C1F594BE1FD71D3C008C04BC /* MasterViewController.swift */,
 				C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */,
+				C12DCF151FE31094006E6EB9 /* CustomCell.swift */,
 				C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */,
 				C1F595641FD73ADB008C04BC /* DrawerViewController.swift */,
 				C12DCF131FE20BF0006E6EB9 /* Guy.swift */,
@@ -346,6 +349,7 @@
 				C1F594BF1FD71D3C008C04BC /* MasterViewController.swift in Sources */,
 				C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */,
 				C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */,
+				C12DCF161FE31094006E6EB9 /* CustomCell.swift in Sources */,
 				C1F595651FD73ADB008C04BC /* DrawerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

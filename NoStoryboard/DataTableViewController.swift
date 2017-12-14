@@ -50,8 +50,6 @@ class DataTableViewController: UITableViewController {
                 return
             }
             self.tableArray = json
-            print("TABLE ARRAY")
-            print(self.tableArray)
             
             /*
             let imageUrlString = thisGuy["imageUrl"] as! String
@@ -104,8 +102,15 @@ class DataTableViewController: UITableViewController {
         
         // let name = person.value(forKey: "name") as! String
         let name = guy?["name"] as! String
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         cell.textLabel?.text = name
+        
+        let imageUrlString = guy?["imageUrl"] as! String
+        let imageUrl = URL(string: imageUrlString)
+        let imageData = try? Data(contentsOf: imageUrl!)
+        let image = UIImage(data: imageData!)
+        
+        cell.imageView?.image = image
         cell.backgroundColor = UIColor.orange
 
         return cell

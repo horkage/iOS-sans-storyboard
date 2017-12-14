@@ -29,7 +29,7 @@ class MasterViewController: UIViewController {
         let dataView = dataController?.tableView
         dataView?.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dataView!)
-        dataView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        dataView?.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
         
         setupLayout()
         
