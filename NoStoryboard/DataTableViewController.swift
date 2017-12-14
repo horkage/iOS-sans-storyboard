@@ -10,8 +10,7 @@ import UIKit
 import CoreData
 
 class DataTableViewController: UITableViewController {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var people: [NSManagedObject] = []
+    // let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var guys = [Guy]()
     var tableArray = [Any]()
     
@@ -19,12 +18,7 @@ class DataTableViewController: UITableViewController {
         super.viewDidLoad()
         parseJSON()
         
-        guys = appDelegate.guyObjects
-        
-        
-        // tableView.estimatedRowHeight = 200
-        // tableView.dataSource = people as! UITableViewDataSource
-        
+        /*
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
         do {
@@ -33,17 +27,9 @@ class DataTableViewController: UITableViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error). \(error.userInfo)")
         }
+        */
         
         self.tableView.rowHeight = 100
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // tableView.delegate = self
-        // tableView.clearsContextBeforeDrawing = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     func parseJSON() {
@@ -67,6 +53,17 @@ class DataTableViewController: UITableViewController {
             print("TABLE ARRAY")
             print(self.tableArray)
             
+            /*
+            let imageUrlString = thisGuy["imageUrl"] as! String
+            let imageUrl = URL(string: imageUrlString)
+            let imageData = try? Data(contentsOf: imageUrl!)
+            let image = UIImage(data: imageData!)
+            var guy = Guy()
+            guy.name = name!
+            guy.image = image!
+            self.guyObjects.append(guy)
+            */
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -82,7 +79,6 @@ class DataTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -104,66 +100,16 @@ class DataTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let person = people[indexPath.row]
         let guy = self.tableArray[indexPath.row] as? [String: Any]
         
         // let name = person.value(forKey: "name") as! String
         let name = guy?["name"] as! String
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-        
-        // var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        
-        // cell.textLabel?.text = "Bob"
-        
-        
         cell.textLabel?.text = name
         cell.backgroundColor = UIColor.orange
-        
-        
-        // cell.backgroundColor = UIColor.white
-        return cell
-    }
-    
-    /*
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    */
-
-    
-    /*
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("THIS THING WAS CALLED")
-        return UITableViewAutomaticDimension
-    }
- */
-    
-    
-    /*
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: IndexPath) -> CGFloat {
-        print("THIS THING WAS CALLED")
-        return UITableViewAutomaticDimension
-    }
-    */
-    
- 
-    /*
-    func receiveData(data: [NSManagedObject]) {
-        print("receive called")
-        people = data
-    }
-    */
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
 
         return cell
     }
-    */
-    
 
     /*
     // Override to support conditional editing of the table view.

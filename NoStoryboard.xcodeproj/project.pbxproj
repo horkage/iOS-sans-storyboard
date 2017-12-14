@@ -11,14 +11,9 @@
 		C12DCF101FE0645A006E6EB9 /* socket.io.js in Resources */ = {isa = PBXBuildFile; fileRef = C12DCF0F1FE0645A006E6EB9 /* socket.io.js */; };
 		C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF131FE20BF0006E6EB9 /* Guy.swift */; };
 		C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A11FD20F21008C04BC /* AppDelegate.swift */; };
-		C1F594A41FD20F21008C04BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A31FD20F21008C04BC /* ViewController.swift */; };
 		C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A81FD20F21008C04BC /* NoStoryboard.xcdatamodeld */; };
 		C1F594AC1FD20F21008C04BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F594AB1FD20F21008C04BC /* Assets.xcassets */; };
 		C1F594AF1FD20F21008C04BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F594AD1FD20F21008C04BC /* LaunchScreen.storyboard */; };
-		C1F594B71FD21826008C04BC /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594B61FD21826008C04BC /* CustomViewController.swift */; };
-		C1F594B91FD21D76008C04BC /* CustomDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594B81FD21D76008C04BC /* CustomDataProvider.swift */; };
-		C1F594BB1FD5D49C008C04BC /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594BA1FD5D49C008C04BC /* Page2ViewController.swift */; };
-		C1F594BD1FD5E146008C04BC /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594BC1FD5E146008C04BC /* State.swift */; };
 		C1F594BF1FD71D3C008C04BC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594BE1FD71D3C008C04BC /* MasterViewController.swift */; };
 		C1F5953F1FD735F3008C04BC /* font-awesome.css in Resources */ = {isa = PBXBuildFile; fileRef = C1F595171FD735F3008C04BC /* font-awesome.css */; };
 		C1F595401FD735F3008C04BC /* font-awesome.min.css in Resources */ = {isa = PBXBuildFile; fileRef = C1F595181FD735F3008C04BC /* font-awesome.min.css */; };
@@ -59,7 +54,6 @@
 		C1F595631FD735F3008C04BC /* font-awesome.scss in Resources */ = {isa = PBXBuildFile; fileRef = C1F5953E1FD735F3008C04BC /* font-awesome.scss */; };
 		C1F595651FD73ADB008C04BC /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F595641FD73ADB008C04BC /* DrawerViewController.swift */; };
 		C1F595671FD9FAC6008C04BC /* MasterViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */; };
-		C1F595691FD9FD3C008C04BC /* MasterViewController+AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F595681FD9FD3C008C04BC /* MasterViewController+AppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,15 +62,10 @@
 		C12DCF131FE20BF0006E6EB9 /* Guy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Guy.swift; path = ../Guy.swift; sourceTree = "<group>"; };
 		C1F5949E1FD20F21008C04BC /* NoStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F594A11FD20F21008C04BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1F594A31FD20F21008C04BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1F594A91FD20F21008C04BC /* NoStoryboard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoStoryboard.xcdatamodel; sourceTree = "<group>"; };
 		C1F594AB1FD20F21008C04BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1F594AE1FD20F21008C04BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1F594B01FD20F21008C04BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1F594B61FD21826008C04BC /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		C1F594B81FD21D76008C04BC /* CustomDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDataProvider.swift; sourceTree = "<group>"; };
-		C1F594BA1FD5D49C008C04BC /* Page2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
-		C1F594BC1FD5E146008C04BC /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		C1F594BE1FD71D3C008C04BC /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		C1F595171FD735F3008C04BC /* font-awesome.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.css"; sourceTree = "<group>"; };
 		C1F595181FD735F3008C04BC /* font-awesome.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "font-awesome.min.css"; sourceTree = "<group>"; };
@@ -117,7 +106,6 @@
 		C1F5953E1FD735F3008C04BC /* font-awesome.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "font-awesome.scss"; sourceTree = "<group>"; };
 		C1F595641FD73ADB008C04BC /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MasterViewController+Layout.swift"; sourceTree = "<group>"; };
-		C1F595681FD9FD3C008C04BC /* MasterViewController+AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MasterViewController+AppData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,16 +140,10 @@
 			children = (
 				C1F595151FD735F3008C04BC /* font-awesome-4.7-2.0 */,
 				C1F594A11FD20F21008C04BC /* AppDelegate.swift */,
-				C1F594B81FD21D76008C04BC /* CustomDataProvider.swift */,
-				C1F594A31FD20F21008C04BC /* ViewController.swift */,
-				C1F594B61FD21826008C04BC /* CustomViewController.swift */,
 				C1F594BE1FD71D3C008C04BC /* MasterViewController.swift */,
 				C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */,
-				C1F595681FD9FD3C008C04BC /* MasterViewController+AppData.swift */,
 				C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */,
 				C1F595641FD73ADB008C04BC /* DrawerViewController.swift */,
-				C1F594BA1FD5D49C008C04BC /* Page2ViewController.swift */,
-				C1F594BC1FD5E146008C04BC /* State.swift */,
 				C12DCF131FE20BF0006E6EB9 /* Guy.swift */,
 				C1F594AB1FD20F21008C04BC /* Assets.xcassets */,
 				C1F594AD1FD20F21008C04BC /* LaunchScreen.storyboard */,
@@ -363,13 +345,7 @@
 				C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */,
 				C1F594BF1FD71D3C008C04BC /* MasterViewController.swift in Sources */,
 				C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */,
-				C1F594A41FD20F21008C04BC /* ViewController.swift in Sources */,
 				C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */,
-				C1F595691FD9FD3C008C04BC /* MasterViewController+AppData.swift in Sources */,
-				C1F594B91FD21D76008C04BC /* CustomDataProvider.swift in Sources */,
-				C1F594BB1FD5D49C008C04BC /* Page2ViewController.swift in Sources */,
-				C1F594BD1FD5E146008C04BC /* State.swift in Sources */,
-				C1F594B71FD21826008C04BC /* CustomViewController.swift in Sources */,
 				C1F595651FD73ADB008C04BC /* DrawerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

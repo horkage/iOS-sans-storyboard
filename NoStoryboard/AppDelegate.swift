@@ -11,112 +11,16 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    var guyObjects = [Guy]()
-
-
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         
-
         let homeViewController = MasterViewController()
         // homeViewController.dataProvider = CustomDataProvider()
         window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
-        
-        // network request cruft
-        //
-        // define endpoint (this endpoint responds with a JSON array of objects)
-        //
-        let endpoint: String = "http://10.1.20.130:9000/getGuys"
-        guard let url = URL(string: endpoint) else {
-            print("Can't create URL")
-            return false
-        }
-        
-        // define request using endpoint
-        //
-        let urlRequest = URLRequest(url: url)
-        let session = URLSession.shared
-        
-        // define a datatask for this shared session
-        //
-        let task = session.dataTask(with: urlRequest) { data, response, error in
-            guard error == nil else {
-                print("Bail out: couldn't GET \(endpoint)")
-                return
-            }
-            
-            // safely extract data from response object
-            //
-            guard let responseData = data else {
-                print("No data recieved")
-                return
-            }
-            
-            // do application-y stuff with the response data, namely, convert it from raw JSON into swift-y objects
-            //
-            do {
-                // parse the server's JSON response array data into a swift JSON array object
-                //
-                guard let guys = try JSONSerialization.jsonObject(with: responseData, options: [])
-                    as? [Any] else {
-                        print("error trying to convert data to JSON (1)")
-                        return
-                }
-                
-                // iterate over the "constituted" swift array
-                //
-                for (guy) in guys {
-                    // "cast" each element of the array from JSON hash into swift dictionary object
-                    //
-                    guard let thisGuy = guy as? [String: Any] else {
-                        print("couldn't extract guy")
-                        return
-                    }
-                    
-                    // Yay! Goodies!  (deliberately block main thread here. no point in async'ing this for an app w/o data..)
-                    let name = thisGuy["name"] as? String
-                    
-                    let imageUrlString = thisGuy["imageUrl"] as! String
-                    let imageUrl = URL(string: imageUrlString)
-                    let imageData = try? Data(contentsOf: imageUrl!)
-                    let image = UIImage(data: imageData!)
-                    var guy = Guy()
-                    guy.name = name!
-                    guy.image = image!
-                    self.guyObjects.append(guy)
-                    
-                    // async this at some point:
-                    /*
-                    let url = URL(string: image.url)
-                    
-                    DispatchQueue.global().async {
-                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                        DispatchQueue.main.async {
-                            imageView.image = UIImage(data: data!)
-                        }
-                    }
-                    */
-                }
-                let dataController = DataTableViewController()
-                DispatchQueue.main.async {
-                    dataController.tableView.reloadData()
-                }
-                
-                
-            } catch {
-                print("error converting requestData to JSON (2)")
-                return
-            }
-        }
-        
-        // kick-off the async session data task
-        //
-        task.resume()
         return true
     }
 
@@ -188,6 +92,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 

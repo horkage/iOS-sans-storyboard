@@ -10,16 +10,9 @@ import UIKit
 import CoreData
 
 class MasterViewController: UIViewController {
-// class MasterViewController: UITableViewController {
     var drawer = UIView()
     var drawerIsOpen = false
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let guys = [Guy]()
-    
-    var people: [NSManagedObject] = [] // UITableViewDataSource
-    var increment = 1
     let navBar = UIView()
-    var lastButton = UIButton()
     
     // By declaring dataController here gives us a "strong" reference to DataTableViewController
     // If this declaration were not here (but inside the methods below, for example) then whenever
@@ -28,12 +21,8 @@ class MasterViewController: UIViewController {
     // for contrast, Interface Builder deals with this by defining outlets and actions as weak/strong
     var dataController: DataTableViewController?  // the "strong" reference
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let guys = appDelegate.guyObjects
-        print(guys.count)
         
         dataController = DataTableViewController()
         
@@ -50,14 +39,10 @@ class MasterViewController: UIViewController {
         dataView?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         dataView?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         dataView?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-                
-        // setupAppData()
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func openDrawer() {
