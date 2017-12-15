@@ -19,7 +19,7 @@ class MasterViewController: UIViewController {
     // the user scrolls the datatable view, the data is lost
     //
     // for contrast, Interface Builder deals with this by defining outlets and actions as weak/strong
-    var dataController: DataTableViewController?  // the "strong" reference
+    var dataController: DataTableViewController?  // the "strong" reference - now data won't disappear due to weak reference
     
     override func viewDidLoad() {
         super.viewDidLoad()

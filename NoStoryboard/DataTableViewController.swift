@@ -18,8 +18,9 @@ class DataTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.rowHeight = 100
         
-        parseJSON()
+        initAppData()
         
         /*
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -31,11 +32,9 @@ class DataTableViewController: UITableViewController {
             print("Could not fetch. \(error). \(error.userInfo)")
         }
         */
-        
-        self.tableView.rowHeight = 100
     }
     
-    func parseJSON() {
+    func initAppData() {
         let endPoint = URL(string: "http://10.1.20.130:9000/getGuys")
         let task = URLSession.shared.dataTask(with: endPoint!) {(data, response, error) in
             guard error == nil else {
@@ -54,17 +53,6 @@ class DataTableViewController: UITableViewController {
             }
             self.tableArray = json
             
-            /*
-            let imageUrlString = thisGuy["imageUrl"] as! String
-            let imageUrl = URL(string: imageUrlString)
-            let imageData = try? Data(contentsOf: imageUrl!)
-            let image = UIImage(data: imageData!)
-            var guy = Guy()
-            guy.name = name!
-            guy.image = image!
-            self.guyObjects.append(guy)
-            */
-            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -74,8 +62,10 @@ class DataTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select")
-        let cell = tableView.cellForRow(at: indexPath)
-        // print(cell?.textLabel?.text)
+        // let cell = tableView.cellForRow(at: indexPath)
+        let which = self.tableArray[indexPath.row] as? [String: Any]
+        let name = which?["name"] as? String
+        print("You tapped \(name!)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,18 +74,7 @@ class DataTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    /*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        // return people.count
-        print("numberOfSections")
-        return 1
-    }
-    */
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        // return people.count
         return self.tableArray.count
     }
     

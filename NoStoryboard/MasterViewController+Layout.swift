@@ -10,8 +10,6 @@ import UIKit
 
 extension MasterViewController {
     func setupLayout() {
-        
-        // let navBar = UIView()
         view.addSubview(navBar)
         navBar.backgroundColor = UIColor.darkGray
         navBar.translatesAutoresizingMaskIntoConstraints = false
@@ -19,8 +17,6 @@ extension MasterViewController {
         navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         navBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         navBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.20).isActive = true
-        
-        
         
         let buttonOpenMenu = UIButton(frame: CGRect(x: 10, y: 30, width: 50, height: 50))
         navBar.addSubview(buttonOpenMenu)
@@ -51,7 +47,5 @@ extension MasterViewController {
         buttonSave.topAnchor.constraint(equalTo: drawerVC.view.topAnchor, constant: 20.0).isActive = true
         
         self.drawer = drawerVC.view
-        
-        
     }
 }
