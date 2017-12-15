@@ -51,6 +51,7 @@ class MasterViewController: UIViewController {
             // divide adaptive width by 2 because drawer.CENTER.x
             let drawerWidth = self.drawer.frame.size.width / 2
             self.drawer.center.x = self.drawerIsOpen ? -drawerWidth : drawerWidth
+            self.dataController?.view.alpha = self.drawerIsOpen ? 1 : 0.5
         })
         self.drawerIsOpen = !self.drawerIsOpen
     }
