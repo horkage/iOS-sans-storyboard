@@ -16,6 +16,9 @@ class DataTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
         parseJSON()
         
         /*
@@ -94,7 +97,6 @@ class DataTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         // return people.count
         return self.tableArray.count
-        //return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,14 +105,14 @@ class DataTableViewController: UITableViewController {
         // let name = person.value(forKey: "name") as! String
         let name = guy?["name"] as! String
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        cell.textLabel?.text = name
         
         let imageUrlString = guy?["imageUrl"] as! String
         let imageUrl = URL(string: imageUrlString)
         let imageData = try? Data(contentsOf: imageUrl!)
         let image = UIImage(data: imageData!)
-        
-        cell.imageView?.image = image
+
+        cell.testImageView.image = image
+        cell.testLabel.text = name
         cell.backgroundColor = UIColor.orange
 
         return cell

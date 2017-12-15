@@ -9,30 +9,27 @@
 import UIKit
 
 class CustomCell: UITableViewCell {
-    // var cellLabel = UILabel()
-    // var thisImage = UIImage()
-    
-    
-    
-    /*
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    */
+    var testView = UIView()
+    var testImageView = UIImageView()
+    var testLabel = UILabel()
+    // static var randomString = "Bob"
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        /*
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.addSubview(imageView)
-        imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.addSubview(label)
-        label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
-        */
+        self.contentView.addSubview(testView)
+        testView.translatesAutoresizingMaskIntoConstraints = false
+        testView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        testView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        testView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        
+        testView.addSubview(testImageView)
+        testImageView.translatesAutoresizingMaskIntoConstraints = false
+        testImageView.leadingAnchor.constraint(equalTo: testView.leadingAnchor).isActive = true
+        
+        testView.addSubview(testLabel)
+        testLabel.textColor = UIColor.red
+        testLabel.translatesAutoresizingMaskIntoConstraints = false
+        testLabel.leadingAnchor.constraint(equalTo: testImageView.trailingAnchor).isActive = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
