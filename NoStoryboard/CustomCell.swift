@@ -45,12 +45,6 @@ class CustomCell: UITableViewCell {
         progressView?.topAnchor.constraint(equalTo: testLabel.bottomAnchor).isActive = true
     }
     
-    /*
-    DispatchQueue.main.async {
-    this.progressBar.setProgress(Float(this.counter) / this.denominator, animated: true)
-    }
-    */
-    
     func kickOffTimer() {
         startTimer()
     }
@@ -60,11 +54,19 @@ class CustomCell: UITableViewCell {
     }
     
     func updateTimer() {
-        if (self.progressView?.progress.isLessThanOrEqualTo(1.0))! {
+        if (self.progressView?.progress.isLess(than: 1.0))! {
             currentDuration = currentDuration! + 1
-            let test = Float(currentDuration!) / Float(totalDuration!)
-            print(test)
+
+            // Animating the progress bar here like this doesn't block the app and I'm not sure why.
+            // I'm not complaining, but my understanding is that animations need to be dispatched to main thread.
+            // Need to understand why this works in more detail...
             self.progressView?.setProgress(Float(currentDuration!) / Float(totalDuration!), animated: true)
+            
+            // shouldn't it need to be this?
+            //
+            // DispatchQueue.main.async {
+            //     this.progressBar.setProgress(Float(this.counter) / this.denominator, animated: true)
+            // }
         } else {
             print("invalidating timer")
             timer?.invalidate()
