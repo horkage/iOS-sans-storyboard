@@ -13,6 +13,7 @@ class DataTableViewController: UITableViewController {
     // let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var guys = [Guy]()
     var tableArray = [Any]()
+    var toggle = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +84,7 @@ class DataTableViewController: UITableViewController {
         
         // let name = person.value(forKey: "name") as! String
         let name = guy?["name"] as! String
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell: CustomCell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
         let imageUrlString = guy?["imageUrl"] as! String
         let imageUrl = URL(string: imageUrlString)
@@ -93,7 +94,13 @@ class DataTableViewController: UITableViewController {
         cell.testImageView.image = image
         cell.testLabel.text = name
         cell.backgroundColor = UIColor.orange
+        cell.currentDuration = guy?["currentDuration"] as! Int
+        cell.totalDuration = guy?["totalDuration"] as! Int
 
+        let initialProgress = Float(cell.currentDuration!) / Float(cell.totalDuration!)
+        cell.progressView?.progress = initialProgress
+        cell.kickOffTimer()
+        
         return cell
     }
 
