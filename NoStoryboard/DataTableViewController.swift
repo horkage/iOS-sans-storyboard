@@ -105,7 +105,12 @@ class DataTableViewController: UITableViewController {
 
         let initialProgress = Float(cell.currentDuration!) / Float(cell.totalDuration!)
         cell.progressView?.progress = initialProgress
-        cell.kickOffTimer()
+        
+        if (cell.currentDuration! >= cell.totalDuration!) {
+            cell.backgroundColor = UIColor.blue
+        } else {
+            cell.kickOffTimer()
+        }
         
         return cell
     }

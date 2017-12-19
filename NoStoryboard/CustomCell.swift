@@ -71,6 +71,7 @@ class CustomCell: UITableViewCell {
             //     this.progressBar.setProgress(Float(this.counter) / this.denominator, animated: true)
             // }
         } else {
+            self.backgroundColor = UIColor.blue
             timer?.invalidate()
             timer = nil
         }
