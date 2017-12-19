@@ -8,13 +8,15 @@
 
 import UIKit
 import CoreData
+// import NotificationCenter
+import UserNotifications
 
 struct SingletonController {
     static var dataTableViewController = DataTableViewController()
 }
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     var theGoods: [Any] = []
     var window: UIWindow?
     var timers: [Timer] = []
@@ -28,9 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeViewController = MasterViewController()
         window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound], completionHandler: { (granted, error) in
+            print("granted: \(granted)")
+            print("error: \(String(describing: error))")
+        })
+        
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         for i in 0 ..< theGoods.count {
             var guy = theGoods[i] as! [String: Any]

@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import UserNotifications
+import NotificationCenter
 
 class MasterViewController: UIViewController {
     var drawer = UIView()
@@ -15,19 +17,8 @@ class MasterViewController: UIViewController {
     let navBar = UIView()
     let dataTableViewController = SingletonController.dataTableViewController
     
-    // By declaring dataController here gives us a "strong" reference to DataTableViewController
-    // If this declaration were not here (but inside the methods below, for example) then whenever
-    // the user scrolls the datatable view, the data is lost
-    //
-    // for contrast, Interface Builder deals with this by defining outlets and actions as weak/strong
-    // var dataController: DataTableViewController?  // the "strong" reference - now data won't disappear due to weak reference
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // dataController = DataTableViewController()
-        // let dataController = SingletonController.dataTableViewController
-        
         
         let dataView = dataTableViewController.tableView
         dataView?.translatesAutoresizingMaskIntoConstraints = false
@@ -54,8 +45,6 @@ class MasterViewController: UIViewController {
             // divide adaptive width by 2 because drawer.CENTER.x
             let drawerWidth = self.drawer.frame.size.width / 2
             self.drawer.center.x = self.drawerIsOpen ? -drawerWidth : drawerWidth
-            // self.dataController?.view.alpha = self.drawerIsOpen ? 1 : 0.5
-            // let dataController = SingletonController.dataTableViewController
             self.dataTableViewController.view.alpha = self.drawerIsOpen ? 1 : 0.5
         })
         self.drawerIsOpen = !self.drawerIsOpen
@@ -71,9 +60,23 @@ class MasterViewController: UIViewController {
     }
     
     func save() {
-        // notificiations?
-        print("notificaiton?")
-        var timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.doTheThing), userInfo: nil, repeats: false)
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey:
+            "Hello!", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey:
+            "Hello_message_body", arguments: nil)
+        
+        content.sound = UNNotificationSound.default()
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10,
+                                                        repeats: false)
+        
+        // Schedule the notification.
+        let request = UNNotificationRequest(identifier: "TenSecond", content: content, trigger: trigger)
+        
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: { (error) in
+            print("notification scheduled")
+        })
         
         /*
         print("gonna save a thing")
@@ -84,7 +87,7 @@ class MasterViewController: UIViewController {
         let person = NSManagedObject(entity: entity!, insertInto: managedContext)
         
         let theName = "Splat Gore Bob \(increment)"
-        person.setValue(theName, forKey: "name")
+        person.setValue(theName, forKey: "name"){
         
         do {
             try managedContext.save()
