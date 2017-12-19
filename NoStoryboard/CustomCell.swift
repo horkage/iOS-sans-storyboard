@@ -20,6 +20,8 @@ class CustomCell: UITableViewCell {
     var currentDuration: Int?
     var totalDuration: Int?
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(testView)
@@ -51,6 +53,7 @@ class CustomCell: UITableViewCell {
     
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+        appDelegate.timers.append(timer!)
     }
     
     func updateTimer() {
@@ -68,7 +71,6 @@ class CustomCell: UITableViewCell {
             //     this.progressBar.setProgress(Float(this.counter) / this.denominator, animated: true)
             // }
         } else {
-            print("invalidating timer")
             timer?.invalidate()
             timer = nil
         }

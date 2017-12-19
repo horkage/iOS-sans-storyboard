@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 
 class DataTableViewController: UITableViewController {
-    // let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var guys = [Guy]()
-    var tableArray = [Any]()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    // var guys = [Guy]()
+    // var tableArray = [Any]()
     var toggle = true
     
     override func viewDidLoad() {
@@ -22,6 +22,8 @@ class DataTableViewController: UITableViewController {
         self.tableView.rowHeight = 100
         
         initAppData()
+        
+        SingletonController.dataTableViewController = self
         
         /*
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -52,7 +54,8 @@ class DataTableViewController: UITableViewController {
                 print("couldn't parse JSON")
                 return
             }
-            self.tableArray = json
+            // self.tableArray = json
+            self.appDelegate.theGoods = json
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -64,7 +67,8 @@ class DataTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select")
         // let cell = tableView.cellForRow(at: indexPath)
-        let which = self.tableArray[indexPath.row] as? [String: Any]
+        // let which = self.tableArray[indexPath.row] as? [String: Any]
+        let which = appDelegate.theGoods[indexPath.row] as? [String: Any]
         let name = which?["name"] as? String
         print("You tapped \(name!)")
     }
@@ -76,11 +80,13 @@ class DataTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tableArray.count
+        // return self.tableArray.count
+        return appDelegate.theGoods.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let guy = self.tableArray[indexPath.row] as? [String: Any]
+        // let guy = self.tableArray[indexPath.row] as? [String: Any]
+        let guy = appDelegate.theGoods[indexPath.row] as? [String: Any]
         
         // let name = person.value(forKey: "name") as! String
         let name = guy?["name"] as! String
