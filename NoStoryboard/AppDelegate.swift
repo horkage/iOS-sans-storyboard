@@ -20,9 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var timers: [Timer] = []
     
     private func getEpoch() -> Int {
-        let now = Date()
-        let epoch = now.timeIntervalSince1970
-        return(Int(epoch))
+        return(Int(Date().timeIntervalSince1970))
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
