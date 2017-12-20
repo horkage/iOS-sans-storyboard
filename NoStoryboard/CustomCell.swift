@@ -90,20 +90,3 @@ class CustomCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-extension Timer {
-    private struct TimerProps {
-        static var guyId:Int? = 0
-    }
-    
-    var guyId: Int? {
-        get {
-            return objc_getAssociatedObject(self, &TimerProps.guyId) as? Int
-        }
-        set {
-            if let unwrappedValue = newValue {
-                objc_setAssociatedObject(self, &TimerProps.guyId, unwrappedValue as Int?, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-            }
-        }
-    }
-}
