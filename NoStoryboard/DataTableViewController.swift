@@ -83,6 +83,7 @@ class DataTableViewController: UITableViewController {
         
         // let name = person.value(forKey: "name") as! String
         let name = guy?["name"] as! String
+        let id = guy?["id"] as! Int
         let cell: CustomCell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
         let imageUrlString = guy?["imageUrl"] as! String
@@ -102,7 +103,7 @@ class DataTableViewController: UITableViewController {
         if (cell.currentDuration! >= cell.totalDuration!) {
             cell.backgroundColor = UIColor.blue
         } else {
-            cell.kickOffTimer()
+            cell.kickOffTimer(guyId: id)
         }
         
         return cell

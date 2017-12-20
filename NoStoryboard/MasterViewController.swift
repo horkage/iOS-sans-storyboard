@@ -60,6 +60,8 @@ class MasterViewController: UIViewController {
     }
     
     func save() {
+        _ = CustomNetwork.getDetails(id: 1)
+        /*
         let content = UNMutableNotificationContent()
         content.title = NSString.localizedUserNotificationString(forKey:
             "Hello!", arguments: nil)
@@ -77,6 +79,7 @@ class MasterViewController: UIViewController {
         center.add(request, withCompletionHandler: { (error) in
             print("notification scheduled")
         })
+        */
         
         /*
         print("gonna save a thing")

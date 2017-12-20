@@ -47,12 +47,13 @@ class CustomCell: UITableViewCell {
         progressView?.topAnchor.constraint(equalTo: testLabel.bottomAnchor).isActive = true
     }
     
-    func kickOffTimer() {
-        startTimer()
+    func kickOffTimer(guyId: Int) {
+        startTimer(guyId: guyId)
     }
     
-    func startTimer() {
+    func startTimer(guyId: Int) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+        timer?.guyId = guyId
         appDelegate.timers.append(timer!)
     }
     
@@ -71,6 +72,8 @@ class CustomCell: UITableViewCell {
             //     this.progressBar.setProgress(Float(this.counter) / this.denominator, animated: true)
             // }
         } else {
+            print("DO THIS GUY")
+            print(timer?.guyId)
             self.backgroundColor = UIColor.blue
             timer?.invalidate()
             timer = nil
@@ -85,5 +88,22 @@ class CustomCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension Timer {
+    private struct TimerProps {
+        static var guyId:Int? = 0
+    }
+    
+    var guyId: Int? {
+        get {
+            return objc_getAssociatedObject(self, &TimerProps.guyId) as? Int
+        }
+        set {
+            if let unwrappedValue = newValue {
+                objc_setAssociatedObject(self, &TimerProps.guyId, unwrappedValue as Int?, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+            }
+        }
     }
 }
