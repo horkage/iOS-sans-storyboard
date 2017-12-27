@@ -8,7 +8,11 @@
 
 import UIKit
 
-extension MasterViewController {
+extension MasterViewController: DrawerViewControllerDelegate {
+    func didFinishTask(sender: DrawerViewController) {
+        print("didFinishTask called")
+    }
+    
     func setupLayout() {
         view.addSubview(navBar)
         navBar.backgroundColor = UIColor.darkGray
@@ -29,7 +33,14 @@ extension MasterViewController {
         buttonOpenMenu.leadingAnchor.constraint(equalTo: navBar.leadingAnchor, constant: 10.0).isActive = true
         buttonOpenMenu.centerYAnchor.constraint(equalTo: navBar.centerYAnchor).isActive = true
         
+        
+        
+        let label = UILabel(frame: CGRect(x: 100, y: 30, width: 200, height: 50))
+        navBar.addSubview(label)
+        label.text = "The Label"
+        
         let drawerVC = DrawerViewController()
+        drawerVC.delegate = self
         view.addSubview(drawerVC.view)
         drawerVC.view.translatesAutoresizingMaskIntoConstraints = false
         drawerVC.view.trailingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

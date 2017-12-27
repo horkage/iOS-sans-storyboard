@@ -17,6 +17,13 @@ class MasterViewController: UIViewController {
     let navBar = UIView()
     let dataTableViewController = SingletonController.dataTableViewController
     
+    weak var delegate: DrawerViewControllerDelegate?
+    
+    func updateLabel(arg: String) {
+        print("updateLabel called")
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +40,8 @@ class MasterViewController: UIViewController {
         dataView?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         dataView?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         dataView?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(MasterViewController.updateLabel), name: NSNotification.Name(rawValue: "UpdateLabelNotification"), object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,9 +49,11 @@ class MasterViewController: UIViewController {
     }
     
     func openDrawer() {
-        view.bringSubview(toFront: self.drawer)
+        // self.drawer.delegate = self
+        // view.bringSubview(toFront: self.drawer)
         UIView.animate(withDuration: 0.5, animations: {
             // divide adaptive width by 2 because drawer.CENTER.x
+            
             let drawerWidth = self.drawer.frame.size.width / 2
             self.drawer.center.x = self.drawerIsOpen ? -drawerWidth : drawerWidth
             self.dataTableViewController.view.alpha = self.drawerIsOpen ? 1 : 0.5
@@ -57,6 +68,12 @@ class MasterViewController: UIViewController {
     
     func doTheThing() {
         print("the thing was did")
+    }
+    
+    func send() {
+        print("uh oh..")
+        // delegate?.didFinishTask(sender: DrawerViewController)
+        // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateLabelNotification"), object: "Test")
     }
     
     func save() {

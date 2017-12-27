@@ -7,18 +7,40 @@
 //
 
 import UIKit
+import NotificationCenter
+
+protocol DrawerViewControllerDelegate: class {
+
+    func didFinishTask(sender: DrawerViewController)
+}
 
 class DrawerViewController: UIViewController {
+    weak var delegate: DrawerViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.brown
+        
+        let button = UIButton(frame: CGRect(x:0,y:0,width:100,height:50))
+        view.addSubview(button)
+        button.setTitle("Push", for: .normal)
+        button.backgroundColor = UIColor.gray
+        button.setTitleColor(UIColor.cyan, for: .normal)
+        button.addTarget(self, action: #selector(send), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        button.topAnchor.constraint(equalTo: view.topAnchor, constant: 80.0).isActive = true
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    func send() {
+        print("send")
+        // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateLabelNotification"), object: nil)
+    }
     /*
     // MARK: - Navigation
 
