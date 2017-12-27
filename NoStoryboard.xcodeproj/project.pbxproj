@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C11A73FA1FF45DCA00D13714 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A73F91FF45DCA00D13714 /* Constant.swift */; };
+		C11A73FC1FF45E4600D13714 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A73FB1FF45E4600D13714 /* DataSource.swift */; };
+		C11A73FE1FF45EA800D13714 /* DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A73FD1FF45EA800D13714 /* DataSourceDelegate.swift */; };
+		C11A74001FF45F0400D13714 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A73FF1FF45F0400D13714 /* TableViewDataSource.swift */; };
+		C11A74021FF45F5500D13714 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74011FF45F5500D13714 /* WebService.swift */; };
+		C11A74041FF45F9800D13714 /* WebServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74031FF45F9800D13714 /* WebServiceDelegate.swift */; };
 		C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */; };
 		C12DCF101FE0645A006E6EB9 /* socket.io.js in Resources */ = {isa = PBXBuildFile; fileRef = C12DCF0F1FE0645A006E6EB9 /* socket.io.js */; };
 		C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF131FE20BF0006E6EB9 /* Guy.swift */; };
@@ -60,6 +66,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C11A73F91FF45DCA00D13714 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		C11A73FB1FF45E4600D13714 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		C11A73FD1FF45EA800D13714 /* DataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceDelegate.swift; sourceTree = "<group>"; };
+		C11A73FF1FF45F0400D13714 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		C11A74011FF45F5500D13714 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		C11A74031FF45F9800D13714 /* WebServiceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceDelegate.swift; sourceTree = "<group>"; };
 		C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
 		C12DCF0F1FE0645A006E6EB9 /* socket.io.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = socket.io.js; sourceTree = "<group>"; };
 		C12DCF131FE20BF0006E6EB9 /* Guy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Guy.swift; path = ../Guy.swift; sourceTree = "<group>"; };
@@ -154,6 +166,12 @@
 				C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */,
 				C1FE53641FEAE71100CADCB1 /* Timer+TimerProps.swift */,
 				C12DCF131FE20BF0006E6EB9 /* Guy.swift */,
+				C11A73F91FF45DCA00D13714 /* Constant.swift */,
+				C11A73FB1FF45E4600D13714 /* DataSource.swift */,
+				C11A73FD1FF45EA800D13714 /* DataSourceDelegate.swift */,
+				C11A73FF1FF45F0400D13714 /* TableViewDataSource.swift */,
+				C11A74011FF45F5500D13714 /* WebService.swift */,
+				C11A74031FF45F9800D13714 /* WebServiceDelegate.swift */,
 				C1F594AB1FD20F21008C04BC /* Assets.xcassets */,
 				C1F594AD1FD20F21008C04BC /* LaunchScreen.storyboard */,
 				C1F594B01FD20F21008C04BC /* Info.plist */,
@@ -357,12 +375,18 @@
 				C1F595671FD9FAC6008C04BC /* MasterViewController+Layout.swift in Sources */,
 				C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */,
 				C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */,
+				C11A74021FF45F5500D13714 /* WebService.swift in Sources */,
 				C1F594BF1FD71D3C008C04BC /* MasterViewController.swift in Sources */,
 				C1FE53611FE9DED200CADCB1 /* CustomNetwork.swift in Sources */,
 				C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */,
+				C11A73FE1FF45EA800D13714 /* DataSourceDelegate.swift in Sources */,
+				C11A73FC1FF45E4600D13714 /* DataSource.swift in Sources */,
 				C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */,
 				C12DCF161FE31094006E6EB9 /* CustomCell.swift in Sources */,
+				C11A73FA1FF45DCA00D13714 /* Constant.swift in Sources */,
 				C1FE53651FEAE71100CADCB1 /* Timer+TimerProps.swift in Sources */,
+				C11A74041FF45F9800D13714 /* WebServiceDelegate.swift in Sources */,
+				C11A74001FF45F0400D13714 /* TableViewDataSource.swift in Sources */,
 				C1F595651FD73ADB008C04BC /* DrawerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
