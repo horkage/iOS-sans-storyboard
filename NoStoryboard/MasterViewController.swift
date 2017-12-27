@@ -12,12 +12,11 @@ import UserNotifications
 import NotificationCenter
 
 class MasterViewController: UIViewController {
+    let navBar = UIView()
     var drawer = UIView()
     var drawerIsOpen = false
-    let navBar = UIView()
+
     let dataTableViewController = SingletonController.dataTableViewController
-    
-    weak var delegate: DrawerViewControllerDelegate?
     
     func updateLabel(arg: String) {
         print("updateLabel called")

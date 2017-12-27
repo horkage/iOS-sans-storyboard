@@ -8,11 +8,7 @@
 
 import UIKit
 
-extension MasterViewController: DrawerViewControllerDelegate {
-    func didFinishTask(sender: DrawerViewController) {
-        print("didFinishTask called")
-    }
-    
+extension MasterViewController {
     func setupLayout() {
         view.addSubview(navBar)
         navBar.backgroundColor = UIColor.darkGray
@@ -33,30 +29,25 @@ extension MasterViewController: DrawerViewControllerDelegate {
         buttonOpenMenu.leadingAnchor.constraint(equalTo: navBar.leadingAnchor, constant: 10.0).isActive = true
         buttonOpenMenu.centerYAnchor.constraint(equalTo: navBar.centerYAnchor).isActive = true
         
-        
-        
         let label = UILabel(frame: CGRect(x: 100, y: 30, width: 200, height: 50))
         navBar.addSubview(label)
         label.text = "The Label"
         
-        let drawerVC = DrawerViewController()
-        drawerVC.delegate = self
-        view.addSubview(drawerVC.view)
-        drawerVC.view.translatesAutoresizingMaskIntoConstraints = false
-        drawerVC.view.trailingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        drawerVC.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75).isActive = true
-        drawerVC.view.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        drawerVC.view.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
+        view.addSubview(drawer)
+        drawer.translatesAutoresizingMaskIntoConstraints = false
+        drawer.trailingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        drawer.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75).isActive = true
+        drawer.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        drawer.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
+        drawer.backgroundColor = UIColor.gray
         let buttonSave = UIButton(frame: CGRect(x:0,y:0,width:100,height:50))
-        drawerVC.view.addSubview(buttonSave)
+        drawer.addSubview(buttonSave)
         buttonSave.setTitle("Save", for: .normal)
         buttonSave.backgroundColor = UIColor.gray
         buttonSave.setTitleColor(UIColor.cyan, for: .normal)
         buttonSave.addTarget(self, action: #selector(self.save), for: .touchUpInside)
         buttonSave.translatesAutoresizingMaskIntoConstraints = false
-        buttonSave.centerXAnchor.constraint(equalTo: drawerVC.view.centerXAnchor).isActive = true
-        buttonSave.topAnchor.constraint(equalTo: drawerVC.view.topAnchor, constant: 20.0).isActive = true
-        
-        self.drawer = drawerVC.view
+        buttonSave.centerXAnchor.constraint(equalTo: drawer.centerXAnchor).isActive = true
+        buttonSave.topAnchor.constraint(equalTo: drawer.topAnchor, constant: 20.0).isActive = true
     }
 }
