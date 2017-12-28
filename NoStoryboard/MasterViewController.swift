@@ -76,7 +76,6 @@ class MasterViewController: UIViewController {
     }
     
     func save() {
-        _ = CustomNetwork.getDetails(id: 1)
         /*
         let content = UNMutableNotificationContent()
         content.title = NSString.localizedUserNotificationString(forKey:

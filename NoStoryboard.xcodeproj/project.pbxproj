@@ -60,7 +60,6 @@
 		C1F595621FD735F3008C04BC /* _variables.scss in Resources */ = {isa = PBXBuildFile; fileRef = C1F5953D1FD735F3008C04BC /* _variables.scss */; };
 		C1F595631FD735F3008C04BC /* font-awesome.scss in Resources */ = {isa = PBXBuildFile; fileRef = C1F5953E1FD735F3008C04BC /* font-awesome.scss */; };
 		C1F595671FD9FAC6008C04BC /* MasterViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */; };
-		C1FE53611FE9DED200CADCB1 /* CustomNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FE53601FE9DED200CADCB1 /* CustomNetwork.swift */; };
 		C1FE53651FEAE71100CADCB1 /* Timer+TimerProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FE53641FEAE71100CADCB1 /* Timer+TimerProps.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,7 +119,6 @@
 		C1F5953D1FD735F3008C04BC /* _variables.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _variables.scss; sourceTree = "<group>"; };
 		C1F5953E1FD735F3008C04BC /* font-awesome.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "font-awesome.scss"; sourceTree = "<group>"; };
 		C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MasterViewController+Layout.swift"; sourceTree = "<group>"; };
-		C1FE53601FE9DED200CADCB1 /* CustomNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNetwork.swift; sourceTree = "<group>"; };
 		C1FE53641FEAE71100CADCB1 /* Timer+TimerProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+TimerProps.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,7 +155,6 @@
 				C1F595151FD735F3008C04BC /* font-awesome-4.7-2.0 */,
 				C1F594A11FD20F21008C04BC /* AppDelegate.swift */,
 				C12DCF151FE31094006E6EB9 /* CustomCell.swift */,
-				C1FE53601FE9DED200CADCB1 /* CustomNetwork.swift */,
 				C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */,
 				C1F594BE1FD71D3C008C04BC /* MasterViewController.swift */,
 				C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */,
@@ -374,7 +371,6 @@
 				C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */,
 				C11A74021FF45F5500D13714 /* WebService.swift in Sources */,
 				C1F594BF1FD71D3C008C04BC /* MasterViewController.swift in Sources */,
-				C1FE53611FE9DED200CADCB1 /* CustomNetwork.swift in Sources */,
 				C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */,
 				C11A73FE1FF45EA800D13714 /* DataSourceDelegate.swift in Sources */,
 				C11A73FC1FF45E4600D13714 /* DataSource.swift in Sources */,
