@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)        
-        let homeViewController = MasterViewController()
+        let homeViewController = ViewController()
         window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
         

@@ -10,14 +10,13 @@ import UIKit
 
 final class DataSource: WebServiceDelegate {
     static let shared = DataSource()
-    var delegate: TableView
+    var delegate: TableViewController?
     
     private init() {
-        self.delegate = TableView()
-    }
+        self.delegate = TableViewController()    }
     
     func onData(data: [Any]) {
         print("delegate fired")
-        delegate.onLoadData(data: data)
+        delegate?.onLoadData(data: data)
     }
 }

@@ -76,6 +76,7 @@ class MasterViewController: UIViewController {
     }
     
     func save() {
+        print("save called")
         /*
         let content = UNMutableNotificationContent()
         content.title = NSString.localizedUserNotificationString(forKey:
