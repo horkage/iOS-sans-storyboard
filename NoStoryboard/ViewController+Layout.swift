@@ -27,24 +27,6 @@ extension ViewController {
         buttonOpenMenu.leadingAnchor.constraint(equalTo: navView!.leadingAnchor, constant: 10.0).isActive = true
         buttonOpenMenu.centerYAnchor.constraint(equalTo: navView!.centerYAnchor).isActive = true
         
-        /*
-        let navButton = UIButton()
-        navView!.addSubview(navButton)
-        navButton.translatesAutoresizingMaskIntoConstraints = false
-        navButton.setTitle("tap", for: .normal)
-        navButton.centerXAnchor.constraint(equalTo: navView!.centerXAnchor).isActive = true
-        navButton.centerYAnchor.constraint(equalTo: navView!.centerYAnchor).isActive = true
-        navButton.addTarget(self, action: #selector(self.click), for: .touchUpInside)
-        */
-        
-        /*
-         navView!.addSubview(label)
-         label.translatesAutoresizingMaskIntoConstraints = false
-         label.text = "The Label"
-         label.centerXAnchor.constraint(equalTo: navView!.centerXAnchor).isActive = true
-         label.centerYAnchor.constraint(equalTo: navView!.centerYAnchor).isActive = true
-         */
-        
         view.addSubview(tableView!)
         tableView!.translatesAutoresizingMaskIntoConstraints = false
         tableView!.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
@@ -65,6 +47,5 @@ extension ViewController {
         drawerButton.centerXAnchor.constraint(equalTo: (drawerView?.centerXAnchor)!).isActive = true
         drawerButton.centerYAnchor.constraint(equalTo: (drawerView?.centerYAnchor)!).isActive = true
         drawerButton.addTarget(self, action: #selector(self.drawerClick), for: .touchUpInside)
-        
     }
 }
