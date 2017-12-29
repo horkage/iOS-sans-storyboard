@@ -16,6 +16,18 @@ extension ViewController {
         navView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.20).isActive = true
         navView!.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         
+        let buttonOpenMenu = UIButton(frame: CGRect(x: 10, y: 30, width: 50, height: 50))
+        navView!.addSubview(buttonOpenMenu)
+        buttonOpenMenu.titleLabel?.font = UIFont(name: "FontAwesome", size: 24.0)
+        buttonOpenMenu.setTitle("\u{f0c9}", for: .normal)
+        buttonOpenMenu.backgroundColor = UIColor.gray
+        buttonOpenMenu.setTitleColor(UIColor.cyan, for: .normal)
+        buttonOpenMenu.addTarget(self, action: #selector(self.openDrawer), for: .touchUpInside)
+        buttonOpenMenu.translatesAutoresizingMaskIntoConstraints = false
+        buttonOpenMenu.leadingAnchor.constraint(equalTo: navView!.leadingAnchor, constant: 10.0).isActive = true
+        buttonOpenMenu.centerYAnchor.constraint(equalTo: navView!.centerYAnchor).isActive = true
+        
+        /*
         let navButton = UIButton()
         navView!.addSubview(navButton)
         navButton.translatesAutoresizingMaskIntoConstraints = false
@@ -23,6 +35,7 @@ extension ViewController {
         navButton.centerXAnchor.constraint(equalTo: navView!.centerXAnchor).isActive = true
         navButton.centerYAnchor.constraint(equalTo: navView!.centerYAnchor).isActive = true
         navButton.addTarget(self, action: #selector(self.click), for: .touchUpInside)
+        */
         
         /*
          navView!.addSubview(label)

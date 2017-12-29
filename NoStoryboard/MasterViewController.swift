@@ -16,7 +16,7 @@ class MasterViewController: UIViewController {
     var drawer = UIView()
     var drawerIsOpen = false
 
-    let dataTableViewController = SingletonController.dataTableViewController
+    // let dataTableViewController = SingletonController.dataTableViewController
     
     func updateLabel(arg: String) {
         print("updateLabel called")
@@ -25,13 +25,13 @@ class MasterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         let dataView = dataTableViewController.tableView
         dataView?.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dataView!)
-        dataView?.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
+        dataView?.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         
-        setupLayout()
+        // setupLayout()
         
         // auto layout needed all 4 constraints to work - just providing top wasn't enough
         // now the very first top cell isn't buried behind the navbar
@@ -41,6 +41,7 @@ class MasterViewController: UIViewController {
         dataView?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(MasterViewController.updateLabel), name: NSNotification.Name(rawValue: "UpdateLabelNotification"), object: nil)
+        */
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,6 +51,7 @@ class MasterViewController: UIViewController {
     func openDrawer() {
         // self.drawer.delegate = self
         // view.bringSubview(toFront: self.drawer)
+        /*
         UIView.animate(withDuration: 0.5, animations: {
             // divide adaptive width by 2 because drawer.CENTER.x
             
@@ -57,6 +59,7 @@ class MasterViewController: UIViewController {
             self.drawer.center.x = self.drawerIsOpen ? -drawerWidth : drawerWidth
             self.dataTableViewController.view.alpha = self.drawerIsOpen ? 1 : 0.5
         })
+        */
         self.drawerIsOpen = !self.drawerIsOpen
     }
     

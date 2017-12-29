@@ -19,8 +19,6 @@ class ViewController: UIViewController {
     var drawerView: UIView?
     var drawerIsOpen = false
     
-    var label = UILabel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navView = navViewController.view
@@ -45,7 +43,7 @@ class ViewController: UIViewController {
         print("drawer button still works")
     }
     
-    func click() {
+    func openDrawer() {
         print("nav button still works")
         
         UIView.animate(withDuration: 0.5, animations: {

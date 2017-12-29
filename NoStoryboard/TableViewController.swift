@@ -9,11 +9,25 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
-    var array = ["splat", "gore", "bob"]
+    
+    var array: [Any] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 100
+        array.append(["id": 1, "name": "splat", "imageUrl": "http://10.1.20.130:9000/images/cucumber.jpg"])
+        array.append(["id": 2, "name": "gore", "imageUrl": "http://10.1.20.130:9000/images/goldmane.jpg"])
+        
+        /*
+         let managedContext = appDelegate.persistentContainer.viewContext
+         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
+         do {
+         people = try managedContext.fetch(fetchRequest)
+         print("fetched people: \(people.count)")
+         } catch let error as NSError {
+         print("Could not fetch. \(error). \(error.userInfo)")
+         }
+         */
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,12 +56,34 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
-     
-        // Configure the cell...
-        let value = array[indexPath.row]
-     
-        cell.textLabel?.text = value
+        let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+        
+        let guy = array[indexPath.row] as? [String: Any]
+        let name = guy?["name"] as! String
+        // let id = guy?["id"] as! Int
+        
+        let imageUrlString = guy?["imageUrl"] as! String
+        let imageUrl = URL(string: imageUrlString)
+        let imageData = try? Data(contentsOf: imageUrl!)
+        let image = UIImage(data: imageData!)
+        
+        cell.cellImageView.image = image
+        cell.cellLabel.text = name
+        
+        /*
+        cell.currentDuration = guy?["currentDuration"] as! Int
+        cell.totalDuration = guy?["totalDuration"] as! Int
+        
+        let initialProgress = Float(cell.currentDuration!) / Float(cell.totalDuration!)
+        cell.progressView?.progress = initialProgress
+        
+        if (cell.currentDuration! >= cell.totalDuration!) {
+            cell.backgroundColor = UIColor.blue
+        } else {
+            cell.kickOffTimer(guyId: id)
+        }
+        */
+        
         return cell
     }
     
@@ -105,10 +141,10 @@ class TableViewController: UITableViewController {
         for var guy in data {
             let thisGuy = guy as! [String: Any]
             let name = thisGuy["name"]
-            array.append(name as! String)
+            let image = thisGuy["imageUrl"]
+            
+            array.append(["name": name, "imageUrl": image])
         }
-        
-        print(array)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()

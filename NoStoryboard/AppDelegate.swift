@@ -12,7 +12,7 @@ import NotificationCenter
 import UserNotifications
 
 struct SingletonController {
-    static var dataTableViewController = DataTableViewController()
+    // static var dataTableViewController = DataTableViewController()
 }
 
 @UIApplicationMain
@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound], completionHandler: { (granted, error) in
-            print("granted: \(granted)")
-            print("error: \(String(describing: error))")
+            // print("granted: \(granted)")
+            // print("error: \(String(describing: error))")
         })
         
         return true
@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             guy["currentDuration"] = updatedDuration
             theGoods[i] = guy
         }
-        SingletonController.dataTableViewController.tableView.reloadData()
+        // SingletonController.dataTableViewController.tableView.reloadData()
         
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }

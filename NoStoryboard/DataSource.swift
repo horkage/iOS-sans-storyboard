@@ -13,7 +13,8 @@ final class DataSource: WebServiceDelegate {
     var delegate: TableViewController?
     
     private init() {
-        self.delegate = TableViewController()    }
+        self.delegate = TableViewController()
+    }
     
     func onData(data: [Any]) {
         print("delegate fired")

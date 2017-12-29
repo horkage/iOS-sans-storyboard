@@ -10,7 +10,6 @@
 		C11A73FA1FF45DCA00D13714 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A73F91FF45DCA00D13714 /* Constant.swift */; };
 		C11A73FC1FF45E4600D13714 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A73FB1FF45E4600D13714 /* DataSource.swift */; };
 		C11A73FE1FF45EA800D13714 /* DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A73FD1FF45EA800D13714 /* DataSourceDelegate.swift */; };
-		C11A74001FF45F0400D13714 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A73FF1FF45F0400D13714 /* TableViewDataSource.swift */; };
 		C11A74021FF45F5500D13714 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74011FF45F5500D13714 /* WebService.swift */; };
 		C11A74041FF45F9800D13714 /* WebServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74031FF45F9800D13714 /* WebServiceDelegate.swift */; };
 		C11A74101FF5A6FB00D13714 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A740F1FF5A6FB00D13714 /* ViewController.swift */; };
@@ -19,10 +18,8 @@
 		C11A74161FF5A80300D13714 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74151FF5A80300D13714 /* TableViewController.swift */; };
 		C11A74181FF5A8CC00D13714 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74171FF5A8CC00D13714 /* TableViewCell.swift */; };
 		C11A741A1FF5A9DC00D13714 /* ViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74191FF5A9DC00D13714 /* ViewController+Layout.swift */; };
-		C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */; };
 		C12DCF101FE0645A006E6EB9 /* socket.io.js in Resources */ = {isa = PBXBuildFile; fileRef = C12DCF0F1FE0645A006E6EB9 /* socket.io.js */; };
 		C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF131FE20BF0006E6EB9 /* Guy.swift */; };
-		C12DCF161FE31094006E6EB9 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DCF151FE31094006E6EB9 /* CustomCell.swift */; };
 		C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A11FD20F21008C04BC /* AppDelegate.swift */; };
 		C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1F594A81FD20F21008C04BC /* NoStoryboard.xcdatamodeld */; };
 		C1F594AC1FD20F21008C04BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F594AB1FD20F21008C04BC /* Assets.xcassets */; };
@@ -65,7 +62,6 @@
 		C1F595611FD735F3008C04BC /* _stacked.scss in Resources */ = {isa = PBXBuildFile; fileRef = C1F5953C1FD735F3008C04BC /* _stacked.scss */; };
 		C1F595621FD735F3008C04BC /* _variables.scss in Resources */ = {isa = PBXBuildFile; fileRef = C1F5953D1FD735F3008C04BC /* _variables.scss */; };
 		C1F595631FD735F3008C04BC /* font-awesome.scss in Resources */ = {isa = PBXBuildFile; fileRef = C1F5953E1FD735F3008C04BC /* font-awesome.scss */; };
-		C1F595671FD9FAC6008C04BC /* MasterViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */; };
 		C1FE53651FEAE71100CADCB1 /* Timer+TimerProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FE53641FEAE71100CADCB1 /* Timer+TimerProps.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +69,6 @@
 		C11A73F91FF45DCA00D13714 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C11A73FB1FF45E4600D13714 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		C11A73FD1FF45EA800D13714 /* DataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceDelegate.swift; sourceTree = "<group>"; };
-		C11A73FF1FF45F0400D13714 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		C11A74011FF45F5500D13714 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		C11A74031FF45F9800D13714 /* WebServiceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceDelegate.swift; sourceTree = "<group>"; };
 		C11A740F1FF5A6FB00D13714 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,10 +77,8 @@
 		C11A74151FF5A80300D13714 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C11A74171FF5A8CC00D13714 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C11A74191FF5A9DC00D13714 /* ViewController+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Layout.swift"; sourceTree = "<group>"; };
-		C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
 		C12DCF0F1FE0645A006E6EB9 /* socket.io.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = socket.io.js; sourceTree = "<group>"; };
 		C12DCF131FE20BF0006E6EB9 /* Guy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Guy.swift; path = ../Guy.swift; sourceTree = "<group>"; };
-		C12DCF151FE31094006E6EB9 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C1F5949E1FD20F21008C04BC /* NoStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F594A11FD20F21008C04BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1F594A91FD20F21008C04BC /* NoStoryboard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoStoryboard.xcdatamodel; sourceTree = "<group>"; };
@@ -130,7 +123,6 @@
 		C1F5953C1FD735F3008C04BC /* _stacked.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _stacked.scss; sourceTree = "<group>"; };
 		C1F5953D1FD735F3008C04BC /* _variables.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _variables.scss; sourceTree = "<group>"; };
 		C1F5953E1FD735F3008C04BC /* font-awesome.scss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "font-awesome.scss"; sourceTree = "<group>"; };
-		C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MasterViewController+Layout.swift"; sourceTree = "<group>"; };
 		C1FE53641FEAE71100CADCB1 /* Timer+TimerProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+TimerProps.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,28 +158,24 @@
 			children = (
 				C1F595151FD735F3008C04BC /* font-awesome-4.7-2.0 */,
 				C1F594A11FD20F21008C04BC /* AppDelegate.swift */,
-				C12DCF151FE31094006E6EB9 /* CustomCell.swift */,
-				C12DCF0D1FDB4B22006E6EB9 /* DataTableViewController.swift */,
-				C1F594BE1FD71D3C008C04BC /* MasterViewController.swift */,
-				C1F595661FD9FAC6008C04BC /* MasterViewController+Layout.swift */,
+				C11A740F1FF5A6FB00D13714 /* ViewController.swift */,
+				C11A74191FF5A9DC00D13714 /* ViewController+Layout.swift */,
+				C11A74111FF5A76800D13714 /* NavViewController.swift */,
+				C11A74131FF5A7B900D13714 /* DrawerViewController.swift */,
+				C11A74151FF5A80300D13714 /* TableViewController.swift */,
+				C11A74171FF5A8CC00D13714 /* TableViewCell.swift */,
 				C1FE53641FEAE71100CADCB1 /* Timer+TimerProps.swift */,
-				C12DCF131FE20BF0006E6EB9 /* Guy.swift */,
-				C11A73F91FF45DCA00D13714 /* Constant.swift */,
 				C11A73FB1FF45E4600D13714 /* DataSource.swift */,
 				C11A73FD1FF45EA800D13714 /* DataSourceDelegate.swift */,
-				C11A73FF1FF45F0400D13714 /* TableViewDataSource.swift */,
 				C11A74011FF45F5500D13714 /* WebService.swift */,
 				C11A74031FF45F9800D13714 /* WebServiceDelegate.swift */,
+				C11A73F91FF45DCA00D13714 /* Constant.swift */,
+				C12DCF131FE20BF0006E6EB9 /* Guy.swift */,
+				C1F594BE1FD71D3C008C04BC /* MasterViewController.swift */,
 				C1F594AB1FD20F21008C04BC /* Assets.xcassets */,
 				C1F594AD1FD20F21008C04BC /* LaunchScreen.storyboard */,
 				C1F594B01FD20F21008C04BC /* Info.plist */,
 				C1F594A81FD20F21008C04BC /* NoStoryboard.xcdatamodeld */,
-				C11A740F1FF5A6FB00D13714 /* ViewController.swift */,
-				C11A74191FF5A9DC00D13714 /* ViewController+Layout.swift */,
-				C11A74171FF5A8CC00D13714 /* TableViewCell.swift */,
-				C11A74111FF5A76800D13714 /* NavViewController.swift */,
-				C11A74131FF5A7B900D13714 /* DrawerViewController.swift */,
-				C11A74151FF5A80300D13714 /* TableViewController.swift */,
 				C12DCF0F1FE0645A006E6EB9 /* socket.io.js */,
 			);
 			path = NoStoryboard;
@@ -385,8 +373,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C11A74101FF5A6FB00D13714 /* ViewController.swift in Sources */,
-				C1F595671FD9FAC6008C04BC /* MasterViewController+Layout.swift in Sources */,
-				C12DCF0E1FDB4B22006E6EB9 /* DataTableViewController.swift in Sources */,
 				C12DCF141FE20BF0006E6EB9 /* Guy.swift in Sources */,
 				C11A74181FF5A8CC00D13714 /* TableViewCell.swift in Sources */,
 				C11A74021FF45F5500D13714 /* WebService.swift in Sources */,
@@ -397,13 +383,11 @@
 				C11A73FE1FF45EA800D13714 /* DataSourceDelegate.swift in Sources */,
 				C11A73FC1FF45E4600D13714 /* DataSource.swift in Sources */,
 				C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */,
-				C12DCF161FE31094006E6EB9 /* CustomCell.swift in Sources */,
 				C11A73FA1FF45DCA00D13714 /* Constant.swift in Sources */,
 				C11A74141FF5A7BA00D13714 /* DrawerViewController.swift in Sources */,
 				C1FE53651FEAE71100CADCB1 /* Timer+TimerProps.swift in Sources */,
 				C11A74041FF45F9800D13714 /* WebServiceDelegate.swift in Sources */,
 				C11A741A1FF5A9DC00D13714 /* ViewController+Layout.swift in Sources */,
-				C11A74001FF45F0400D13714 /* TableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
