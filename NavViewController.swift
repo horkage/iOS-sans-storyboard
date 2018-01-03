@@ -13,6 +13,17 @@ class NavViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
+        
+        /*
+        let button = UIButton()
+        view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Save", for: .normal)
+        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        button.addTarget(self, action: #selector(self.save), for: .touchUpInside)
+        */
+        
 
         // Do any additional setup after loading the view.
     }
@@ -21,7 +32,6 @@ class NavViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

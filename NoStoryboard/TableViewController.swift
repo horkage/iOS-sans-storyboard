@@ -10,13 +10,14 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var array: [Any] = []
+    // var array: [Any] = []
+    var array: [Guy] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 100
-        array.append(["id": 1, "name": "splat", "imageUrl": "http://10.1.20.130:9000/images/cucumber.jpg"])
-        array.append(["id": 2, "name": "gore", "imageUrl": "http://10.1.20.130:9000/images/goldmane.jpg"])
+        // array.append(["id": 1, "name": "splat", "imageUrl": "http://10.1.20.130:9000/images/cucumber.jpg"])
+        // array.append(["id": 2, "name": "gore", "imageUrl": "http://10.1.20.130:9000/images/goldmane.jpg"])
         
         /*
          let managedContext = appDelegate.persistentContainer.viewContext
@@ -88,7 +89,7 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected \(array[indexPath.row])")
+        // print("selected \(array[indexPath.row])")
     }
 
     /*
@@ -136,15 +137,17 @@ class TableViewController: UITableViewController {
     }
     */
     func onLoadData(data: [Any]) {
-        print("the right onLoadData fired")
+        print("onLoadData fired")
         array = []
         for var guy in data {
             let thisGuy = guy as! [String: Any]
             let name = thisGuy["name"]
             let image = thisGuy["imageUrl"]
             
-            array.append(["name": name, "imageUrl": image])
+            // array.append(["name": name, "imageUrl": image])
         }
+        
+        // let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
