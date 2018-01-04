@@ -19,6 +19,11 @@ struct Constants {
         static let fontLibrary: String = "FontAwesome"
         static let rowHeight: Int = 100
         
+        struct data {
+            static let documentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+            static let archiveURL = documentsDirectory.appendingPathComponent(Constants.app.archiveName)
+        }
+        
         struct glyphs {
             static let bars: String = "\u{f0c9}"
         }

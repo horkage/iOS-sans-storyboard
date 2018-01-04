@@ -36,9 +36,11 @@ final class DataSource: WebServiceDelegate {
     
     // web api > here > TableViewController
     func onData(data: [Any]) {
+        let archiveUrl = Constants.app.data.archiveURL.path
+        
         print("delegate fired")
         
-        guard let storedGuys = NSKeyedUnarchiver.unarchiveObject(withFile: Guy.ArchiveURL.path) as? [Guy] else {
+        guard let storedGuys = NSKeyedUnarchiver.unarchiveObject(withFile: archiveUrl) as? [Guy] else {
             print("Couldn't fish guys out from storage")
             return
         }
@@ -72,10 +74,10 @@ final class DataSource: WebServiceDelegate {
             guys.append(ephemeralGuy)
         }
         
-        let saved = NSKeyedArchiver.archiveRootObject(guys, toFile: Guy.ArchiveURL.path)
+        let saved = NSKeyedArchiver.archiveRootObject(guys, toFile: archiveUrl)
         
         if (saved) {
-            guard let storedGuys = NSKeyedUnarchiver.unarchiveObject(withFile: Guy.ArchiveURL.path) as? [Guy] else {
+            guard let storedGuys = NSKeyedUnarchiver.unarchiveObject(withFile: archiveUrl) as? [Guy] else {
                 print("Couldn't fish guys out from storage")
                 return
             }

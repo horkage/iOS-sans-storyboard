@@ -15,10 +15,6 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = CGFloat(Constants.app.rowHeight)
-        // tableView.rowHeight = 100
-        
-        // array.append(["id": 1, "name": "splat", "imageUrl": "http://10.1.20.130:9000/images/cucumber.jpg"])
-        // array.append(["id": 2, "name": "gore", "imageUrl": "http://10.1.20.130:9000/images/goldmane.jpg"])
         
         /*
          let managedContext = appDelegate.persistentContainer.viewContext
