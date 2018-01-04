@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     
     let deviceId = UIDevice.current.identifierForVendor!.uuidString
     
-    override func viewDidLoad() {
+    override func viewDidLoad() {        
         super.viewDidLoad()
         navView = navViewController.view
         tableView = DataSource.shared.delegate?.view as? UITableView
         drawerView = drawerViewController.view
-        tableView?.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        tableView?.register(TableViewCell.self, forCellReuseIdentifier: Constants.app.customCellClass)
         
         DataSource.shared.registerDevice(deviceId: UIDevice.current.identifierForVendor!.uuidString)
         DataSource.shared.load()

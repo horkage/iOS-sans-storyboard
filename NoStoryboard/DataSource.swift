@@ -18,7 +18,7 @@ final class DataSource: WebServiceDelegate {
     static let shared = DataSource()
     var deviceId: String?
     var delegate: TableViewController?
-    var guys: [Guy] = []
+    var guys = [Guy]()
     
     private init() {
         self.delegate = TableViewController()
@@ -30,7 +30,6 @@ final class DataSource: WebServiceDelegate {
     
     // ViewController > here > web api
     func load() -> Void {
-        print("load called...")
         guard let thing = URL(string: Constants.api.baseUrl) else { return }
         WebService.shared.endpoint(url: thing)
     }
@@ -38,21 +37,26 @@ final class DataSource: WebServiceDelegate {
     // web api > here > TableViewController
     func onData(data: [Any]) {
         print("delegate fired")
+        
+        guard let storedGuys = NSKeyedUnarchiver.unarchiveObject(withFile: Guy.ArchiveURL.path) as? [Guy] else {
+            print("Couldn't fish guys out from storage")
+            return
+        }
+        guys += storedGuys
+        
         // Take the raw data from the authoritative source (the server) and then translate
         // it data into proper objects for the app to use within its own domain.
         // This is the glue between server data and app data.
-        
-        
         for guy in data {
             let guyObject = guy as? [String: Any]
-            let name = guyObject?["name"] as! String
-            let id = guyObject?["id"] as! Int
-            let totalDuration = guyObject?["totalDuration"] as! Int
-            let currentDuration = guyObject?["currentDuration"] as! Int
-            let then = guyObject?["then"] as! Int
-            let now = guyObject?["now"] as! Int
+            let name = guyObject?[Constants.keys.name] as! String
+            let id = guyObject?[Constants.keys.id] as! Int
+            let totalDuration = guyObject?[Constants.keys.totalDuration] as! Int
+            let currentDuration = guyObject?[Constants.keys.currentDuration] as! Int
+            let then = guyObject?[Constants.keys.then] as! Int
+            let now = guyObject?[Constants.keys.now] as! Int
         
-            let imageUrlString = guyObject?["imageUrl"] as! String
+            let imageUrlString = guyObject?[Constants.keys.imageUrl] as! String
             let imageUrl = URL(string: imageUrlString)
             let imageData = try? Data(contentsOf: imageUrl!)
             let image = UIImage(data: imageData!)
@@ -71,26 +75,13 @@ final class DataSource: WebServiceDelegate {
         let saved = NSKeyedArchiver.archiveRootObject(guys, toFile: Guy.ArchiveURL.path)
         
         if (saved) {
-            print("saved is true?")
+            guard let storedGuys = NSKeyedUnarchiver.unarchiveObject(withFile: Guy.ArchiveURL.path) as? [Guy] else {
+                print("Couldn't fish guys out from storage")
+                return
+            }
+            delegate?.onLoadData(data: storedGuys)
         } else {
-            print("poop")
+            print("Couldn't stuff guys into storage")
         }
-        
-        /*
-        guard let guyObjects = NSKeyedUnarchiver.unarchiveObject(withFile: Guy.ArchiveURL.path) as? [Guy] else {
-            print("nada")
-            return
-        }
-        */
-        
-        if let happen = NSKeyedUnarchiver.unarchiveObject(withFile: Guy.ArchiveURL.path) as? [Guy] {
-            let guyObjects: [Guy] = happen
-            print("there is stuff?")
-            print(guyObjects)
-        }
-        
-        
-        
-        delegate?.onLoadData(data: data)
     }
 }

@@ -9,13 +9,14 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    
-    // var array: [Any] = []
-    var array: [Guy] = []
+
+    var guys = [Guy]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 100
+        tableView.rowHeight = CGFloat(Constants.app.rowHeight)
+        // tableView.rowHeight = 100
+        
         // array.append(["id": 1, "name": "splat", "imageUrl": "http://10.1.20.130:9000/images/cucumber.jpg"])
         // array.append(["id": 2, "name": "gore", "imageUrl": "http://10.1.20.130:9000/images/goldmane.jpg"])
         
@@ -53,23 +54,14 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return array.count
+        return guys.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        
-        let guy = array[indexPath.row] as? [String: Any]
-        let name = guy?["name"] as! String
-        // let id = guy?["id"] as! Int
-        
-        let imageUrlString = guy?["imageUrl"] as! String
-        let imageUrl = URL(string: imageUrlString)
-        let imageData = try? Data(contentsOf: imageUrl!)
-        let image = UIImage(data: imageData!)
-        
-        cell.cellImageView.image = image
-        cell.cellLabel.text = name
+        let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: Constants.app.customCellClass, for: indexPath) as! TableViewCell
+        let guy = guys[indexPath.row]
+        cell.cellImageView.image = guy.image
+        cell.cellLabel.text = guy.name
         
         /*
         cell.currentDuration = guy?["currentDuration"] as! Int
@@ -89,7 +81,8 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // print("selected \(array[indexPath.row])")
+        let guy = guys[indexPath.row]
+        print("selected \(guy.name)")
     }
 
     /*
@@ -136,18 +129,10 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    func onLoadData(data: [Any]) {
+    
+    func onLoadData(data: [Guy]) {
         print("onLoadData fired")
-        array = []
-        for var guy in data {
-            let thisGuy = guy as! [String: Any]
-            let name = thisGuy["name"]
-            let image = thisGuy["imageUrl"]
-            
-            // array.append(["name": name, "imageUrl": image])
-        }
-        
-        // let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
+        guys += data
         
         DispatchQueue.main.async {
             self.tableView.reloadData()

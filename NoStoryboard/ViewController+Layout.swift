@@ -18,8 +18,8 @@ extension ViewController {
         
         let buttonOpenMenu = UIButton(frame: CGRect(x: 10, y: 30, width: 50, height: 50))
         navView!.addSubview(buttonOpenMenu)
-        buttonOpenMenu.titleLabel?.font = UIFont(name: "FontAwesome", size: 24.0)
-        buttonOpenMenu.setTitle("\u{f0c9}", for: .normal)
+        buttonOpenMenu.titleLabel?.font = UIFont(name: Constants.app.fontLibrary, size: 24.0)
+        buttonOpenMenu.setTitle(Constants.app.glyphs.bars, for: .normal)
         buttonOpenMenu.backgroundColor = UIColor.gray
         buttonOpenMenu.setTitleColor(UIColor.cyan, for: .normal)
         buttonOpenMenu.addTarget(self, action: #selector(self.openDrawer), for: .touchUpInside)

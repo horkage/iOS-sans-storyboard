@@ -11,8 +11,8 @@ import UIKit
 
 class Guy: NSObject, NSCoding {
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("guys")
-    
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent(Constants.app.archiveName)
+
     var id: Int
     var name: String
     var image: UIImage
@@ -32,25 +32,13 @@ class Guy: NSObject, NSCoding {
     }
     
     required convenience init?(coder decoder: NSCoder) {
-        /*
-        guard
-            let id = decoder.decodeObject(forKey: "id") as? Int,
-            let name = decoder.decodeObject(forKey: "name") as? String,
-            let image = decoder.decodeObject(forKey: "image") as? UIImage,
-            let totalDuration = decoder.decodeObject(forKey: "totalDuration") as? Int,
-            let currentDuration = decoder.decodeObject(forKey: "currentDuration") as? Int,
-            let then = decoder.decodeObject(forKey: "then") as? Int,
-            let now = decoder.decodeObject(forKey: "now") as? Int
-        else { return nil }
-        */
-        
-        let id = decoder.decodeInteger(forKey: "id")
-        let name = decoder.decodeObject(forKey: "name")
-        let image = decoder.decodeObject(forKey: "image") as? UIImage
-        let totalDuration = decoder.decodeInteger(forKey: "totalDuration")
-        let currentDuration = decoder.decodeInteger(forKey: "currentDuration")
-        let then = decoder.decodeInteger(forKey: "then")
-        let now = decoder.decodeInteger(forKey: "now")
+        let id = decoder.decodeInteger(forKey: Constants.keys.id)
+        let name = decoder.decodeObject(forKey: Constants.keys.name)
+        let image = decoder.decodeObject(forKey: Constants.keys.image) as? UIImage
+        let totalDuration = decoder.decodeInteger(forKey: Constants.keys.totalDuration)
+        let currentDuration = decoder.decodeInteger(forKey: Constants.keys.currentDuration)
+        let then = decoder.decodeInteger(forKey: Constants.keys.then)
+        let now = decoder.decodeInteger(forKey: Constants.keys.now)
         
         self.init(
             id: id,
@@ -64,12 +52,12 @@ class Guy: NSObject, NSCoding {
     }
     
     func encode(with coder: NSCoder) {
-        coder.encode(id, forKey: "id")
-        coder.encode(name, forKey: "name")
-        coder.encode(image, forKey: "image")
-        coder.encode(totalDuration, forKey: "totalDuration")
-        coder.encode(currentDuration, forKey: "currentDuration")
-        coder.encode(then, forKey: "then")
-        coder.encode(now, forKey: "now")
+        coder.encode(id, forKey: Constants.keys.id)
+        coder.encode(name, forKey: Constants.keys.name)
+        coder.encode(image, forKey: Constants.keys.image)
+        coder.encode(totalDuration, forKey: Constants.keys.totalDuration)
+        coder.encode(currentDuration, forKey: Constants.keys.currentDuration)
+        coder.encode(then, forKey: Constants.keys.then)
+        coder.encode(now, forKey: Constants.keys.now)
     }
 }
