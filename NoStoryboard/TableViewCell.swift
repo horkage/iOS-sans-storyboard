@@ -14,7 +14,7 @@ class TableViewCell: UITableViewCell {
     var cellImageView = UIImageView(frame: CGRect(x:0, y:0, width:75, height:75))
     var cellLabel = UILabel()
     
-    var progressView: UIProgressView?
+    var progressView: UIProgressView!
     var progressLabel: UILabel?
     var timer: Timer?
     var currentDuration: Int?
@@ -35,11 +35,11 @@ class TableViewCell: UITableViewCell {
         cellLabel.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor).isActive = true
         
         progressView = UIProgressView(progressViewStyle: .default)
-        progressView?.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(progressView!)
-        progressView?.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor).isActive = true
-        progressView?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        progressView?.topAnchor.constraint(equalTo: cellLabel.bottomAnchor).isActive = true
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(progressView)
+        progressView.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor).isActive = true
+        progressView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        progressView.topAnchor.constraint(equalTo: cellLabel.bottomAnchor).isActive = true
         
     }
     

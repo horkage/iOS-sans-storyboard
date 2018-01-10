@@ -17,7 +17,6 @@ struct Constants {
         static let archiveName: String = "guys"
         static let customCellClass: String = "TableViewCell"
         static let fontLibrary: String = "FontAwesome"
-        static let rowHeight: Int = 100
         
         struct data {
             static let documentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!

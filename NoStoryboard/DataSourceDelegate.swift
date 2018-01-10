@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DataSourceDelegate {
-    func onLoadData(data: [Any])
+    func onLoadData(data: [Guy])
 }

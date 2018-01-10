@@ -14,7 +14,7 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = CGFloat(Constants.app.rowHeight)
+        tableView.rowHeight = 100
         
         /*
          let managedContext = appDelegate.persistentContainer.viewContext
@@ -127,9 +127,7 @@ class TableViewController: UITableViewController {
     */
     
     func onLoadData(data: [Guy]) {
-        print("onLoadData fired")
         guys += data
-        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

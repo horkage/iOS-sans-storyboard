@@ -10,9 +10,6 @@
 import UIKit
 
 class Guy: NSObject, NSCoding {
-    // static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    // static let ArchiveURL = DocumentsDirectory.appendingPathComponent(Constants.app.archiveName)
-
     var id: Int
     var name: String
     var image: UIImage
