@@ -13,9 +13,6 @@
 		C11A74021FF45F5500D13714 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74011FF45F5500D13714 /* WebService.swift */; };
 		C11A74041FF45F9800D13714 /* WebServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74031FF45F9800D13714 /* WebServiceDelegate.swift */; };
 		C11A74101FF5A6FB00D13714 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A740F1FF5A6FB00D13714 /* ViewController.swift */; };
-		C11A74121FF5A76800D13714 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74111FF5A76800D13714 /* NavViewController.swift */; };
-		C11A74141FF5A7BA00D13714 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74131FF5A7B900D13714 /* DrawerViewController.swift */; };
-		C11A74161FF5A80300D13714 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74151FF5A80300D13714 /* TableViewController.swift */; };
 		C11A74181FF5A8CC00D13714 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74171FF5A8CC00D13714 /* TableViewCell.swift */; };
 		C11A741A1FF5A9DC00D13714 /* ViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11A74191FF5A9DC00D13714 /* ViewController+Layout.swift */; };
 		C12DCF101FE0645A006E6EB9 /* socket.io.js in Resources */ = {isa = PBXBuildFile; fileRef = C12DCF0F1FE0645A006E6EB9 /* socket.io.js */; };
@@ -72,9 +69,6 @@
 		C11A74011FF45F5500D13714 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		C11A74031FF45F9800D13714 /* WebServiceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceDelegate.swift; sourceTree = "<group>"; };
 		C11A740F1FF5A6FB00D13714 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C11A74111FF5A76800D13714 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavViewController.swift; path = ../NavViewController.swift; sourceTree = "<group>"; };
-		C11A74131FF5A7B900D13714 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
-		C11A74151FF5A80300D13714 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C11A74171FF5A8CC00D13714 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C11A74191FF5A9DC00D13714 /* ViewController+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Layout.swift"; sourceTree = "<group>"; };
 		C12DCF0F1FE0645A006E6EB9 /* socket.io.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = socket.io.js; sourceTree = "<group>"; };
@@ -160,10 +154,7 @@
 				C1F594A11FD20F21008C04BC /* AppDelegate.swift */,
 				C11A740F1FF5A6FB00D13714 /* ViewController.swift */,
 				C11A74191FF5A9DC00D13714 /* ViewController+Layout.swift */,
-				C11A74151FF5A80300D13714 /* TableViewController.swift */,
 				C11A74171FF5A8CC00D13714 /* TableViewCell.swift */,
-				C11A74111FF5A76800D13714 /* NavViewController.swift */,
-				C11A74131FF5A7B900D13714 /* DrawerViewController.swift */,
 				C1FE53641FEAE71100CADCB1 /* Timer+TimerProps.swift */,
 				C11A73FB1FF45E4600D13714 /* DataSource.swift */,
 				C11A73FD1FF45EA800D13714 /* DataSourceDelegate.swift */,
@@ -377,14 +368,11 @@
 				C11A74181FF5A8CC00D13714 /* TableViewCell.swift in Sources */,
 				C11A74021FF45F5500D13714 /* WebService.swift in Sources */,
 				C1F594BF1FD71D3C008C04BC /* MasterViewController.swift in Sources */,
-				C11A74121FF5A76800D13714 /* NavViewController.swift in Sources */,
-				C11A74161FF5A80300D13714 /* TableViewController.swift in Sources */,
 				C1F594AA1FD20F21008C04BC /* NoStoryboard.xcdatamodeld in Sources */,
 				C11A73FE1FF45EA800D13714 /* DataSourceDelegate.swift in Sources */,
 				C11A73FC1FF45E4600D13714 /* DataSource.swift in Sources */,
 				C1F594A21FD20F21008C04BC /* AppDelegate.swift in Sources */,
 				C11A73FA1FF45DCA00D13714 /* Constant.swift in Sources */,
-				C11A74141FF5A7BA00D13714 /* DrawerViewController.swift in Sources */,
 				C1FE53651FEAE71100CADCB1 /* Timer+TimerProps.swift in Sources */,
 				C11A74041FF45F9800D13714 /* WebServiceDelegate.swift in Sources */,
 				C11A741A1FF5A9DC00D13714 /* ViewController+Layout.swift in Sources */,

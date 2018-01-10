@@ -9,14 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // let navViewController = NavViewController()
     var navView: UIView?
     var guys = [Guy]()
     
     // The table view controller is initialized in DataSource because it is a delegate of DataSource
     var tableView: UITableView?
     
-    // let drawerViewController = DrawerViewController()
     var drawerView: UIView?
     var drawerIsOpen = false
     
@@ -24,7 +22,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {        
         super.viewDidLoad()
-        // navView = navViewController.view
         
         navView = UIView()
         navView?.backgroundColor = .blue
